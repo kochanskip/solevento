@@ -15,18 +15,32 @@
 <body>
 
 <!-- Header & Navigation -->
-<header id="header-banner" class="py-3 shadow-sm sticky-top">
-    <div id="brand-name" class="container d-flex justify-content-between align-items-center">
-        <a href="index.html" class="navbar-brand h1 mb-0 fs-5 fw-bold">Solevento Ceramics</a>
-        <nav>
-            <ul class="nav">
-                <li class="nav-item"><a class="nav-link" href="workshops.html">Workshops</a></li>
-                <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Shop</a></li>
-                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-            </ul>
-        </nav>
-    </div>
+<header id="header-banner" class="py-2 shadow-sm sticky-top">
+    <nav class="navbar navbar-expand-md">
+        <div id="brand-name" class="container">
+            <!-- Brand / Logo -->
+            <!-- Logo -->
+            <a href="index.html">
+                <img src="images/logo.png" alt="Logo" style="max-height:70px;" class="me-3">
+            </a>
+
+            <!-- Hamburger button for mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Collapsible menu -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="workshops.html">Workshops</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Shop</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 </header>
 
 <main>
@@ -111,17 +125,14 @@
 <!-- Footer -->
 <footer class="text-muted border-top">
     <div class="bg-light border-bottom py-2">
-        <div class="container d-flex align-items-center justify-content-between flex-wrap">
-            <!-- Logo -->
-            <img src="images/logo.png" alt="Logo" style="max-height:40px;" class="me-3">
-
+        <div class="container d-flex flex-column align-items-center text-center">
             <!-- Address -->
-            <span class="text-muted small me-3">
-                123 Main Street, Penela, Portugal | +1 234 567 890
-            </span>
+            <span class="text-muted small mb-2">
+        123 Main Street, Penela, Portugal | +1 234 567 890
+      </span>
 
             <!-- Icons -->
-            <div class="override-bootstrap">
+            <div class="override-bootstrap d-flex justify-content-center">
                 <a href="mailto:example@email.com" class="text-muted me-3">
                     <i class="bi bi-envelope"></i>
                 </a>
