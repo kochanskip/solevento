@@ -4,7 +4,7 @@
 body {
     scroll-behavior: smooth;
     background-color: #FFEABC;
-    color: #2F3E4E;
+    color: #322c29;
 }
 
 .image-col {
@@ -26,8 +26,7 @@ body {
 }
 
 .craft-section {
-    background-color: #fee2d3;
-    color: #2F3E4E !important;
+    background-color: #ffd498;
 }
 
 /* Custom styles for gallery product cards */
@@ -51,15 +50,6 @@ body {
      background-color: #73c1cd;
 }
 
-#brand-name > a {
-    color: #fae676;
-    font-family: Papyrus, fantasy;
-}
-
-#brand-name > a:hover {
-    color: #EE887A;
-}
-
 /* Navbar and custom link colors */
 .nav-link {
     font-size: larger;
@@ -81,7 +71,7 @@ footer {
 }
 
 .custom-section {
-    background-color: #f6c1ba;
+    background-color: #fceeed;
 }
 
 .override-bootstrap > a {
@@ -90,8 +80,8 @@ footer {
 
 .custom-btn-outline {
     --bs-btn-color: #fff; /* text on normal state */
-    --bs-btn-bg: #417dcd; /* base background */
-    --bs-btn-border-color: #417dcd;
+    --bs-btn-bg: #73c1cd; /* base background */
+    --bs-btn-border-color: #73c1cd;
 
     --bs-btn-hover-color: #fff;
     --bs-btn-hover-bg: #EE887A; /* darker shade for hover */
