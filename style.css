@@ -74,7 +74,8 @@ body {
 .workshops-section,
 .gallery-section,
 .about-section,
-.product-detail-section
+.product-detail-section,
+.workshop-section
 {
     background-color: #F1E3D3;
     color: #2F3E4E;
@@ -84,7 +85,8 @@ body {
 .workshops-section > div > p,
 .gallery-section > div > p,
 .about-section > div > p,
-.product-detail-section > div > p
+.product-detail-section > div > p,
+.workshop-section > div > p
 {
     color: #4B2C34;
 }

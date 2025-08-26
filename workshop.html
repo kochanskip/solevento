@@ -31,18 +31,9 @@
 </header>
 
 <main>
-    <section class="py-5">
+    <section class="workshop-section py-5">
         <div class="container">
             <div id="workshop-detail" class="row justify-content-center"></div>
-        </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact-section" class="contact-section py-5 bg-dark text-white text-center">
-        <div class="container">
-            <h2 class="text-white">Get in Touch</h2>
-            <p class="text-white">Have a question or want to commission a custom piece? We'd love to hear from you.</p>
-            <a href="mailto:info@sunandwindceramics.com" class="btn btn-light btn-lg mt-3">Email Us</a>
         </div>
     </section>
 </main>
@@ -52,7 +43,7 @@
     <div class="bg-light border-bottom py-2">
         <div class="container d-flex align-items-center justify-content-between flex-wrap">
             <!-- Logo -->
-            <img src="your-logo.png" alt="Logo" style="max-height:40px;" class="me-3">
+            <img src="images/logo.png" alt="Logo" style="max-height:40px;" class="me-3">
 
             <!-- Address -->
             <span class="text-muted small me-3">
@@ -88,7 +79,7 @@
                     title:"Ascension",
                     date:"01-09-2025",
                     duration:"2h",
-                    description:"Transcend barriers. A session dedicated to exploring the domain of the angels.",
+                    longDescription:"Transcend barriers. A session dedicated to exploring the domain of the angels.",
                     image:"content\\events\\images\\italy.jpg"},
             ];
         }
@@ -106,7 +97,7 @@
         <div class="card-body">
           <h2>${workshop.title}</h2>
           <p class="text-muted"><strong>Date:</strong> ${workshop.date} | <strong>Duration:</strong> ${workshop.duration}</p>
-          <p>${workshop.description}</p>
+          <p>${workshop.longDescription}</p>
           <a href="mailto:info@sunandwindceramics.com?subject=Booking: ${workshop.title}" class="btn btn-outline-dark mt-3">Book by Email</a>
         </div>
       </div>
