@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workshop | Solevento Ceramics</title>
+    <meta name="description" content="Discover unique, handcrafted ceramics and pottery. Explore a collection of one-of-a-kind mugs, vases, bowls, and decorative art pieces.">
+    <meta name="keywords" content="ceramics, pottery, handcrafted, handmade, artisan, art, studio, vase, mug, bowl, sculptural, home decor">
+    <!-- Bootstrap CSS -->
+    <link href="scripts/bootstrap-5.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="scripts/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Header & Navigation -->
+<header id="header-banner" class="py-3 shadow-sm sticky-top">
+    <div id="brand-name" class="container d-flex justify-content-between align-items-center">
+        <a href="index.html" class="navbar-brand h1 mb-0 fs-5 fw-bold">Solevento Ceramics</a>
+        <nav>
+            <ul class="nav">
+                <li class="nav-item"><a class="nav-link" href="workshops.html">Workshops</a></li>
+                <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Shop</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact-section">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="py-5">
+        <div class="container">
+            <div id="workshop-detail" class="row justify-content-center"></div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact-section" class="contact-section py-5 bg-dark text-white text-center">
+        <div class="container">
+            <h2 class="text-white">Get in Touch</h2>
+            <p class="text-white">Have a question or want to commission a custom piece? We'd love to hear from you.</p>
+            <a href="mailto:info@sunandwindceramics.com" class="btn btn-light btn-lg mt-3">Email Us</a>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="text-muted border-top">
+    <div class="bg-light border-bottom py-2">
+        <div class="container d-flex align-items-center justify-content-between flex-wrap">
+            <!-- Logo -->
+            <img src="your-logo.png" alt="Logo" style="max-height:40px;" class="me-3">
+
+            <!-- Address -->
+            <span class="text-muted small me-3">
+                123 Main Street, Penela, Portugal | +1 234 567 890
+            </span>
+
+            <!-- Icons -->
+            <div class="override-bootstrap">
+                <a href="mailto:example@email.com" class="text-muted me-3">
+                    <i class="bi bi-envelope"></i>
+                </a>
+                <a href="https://instagram.com/yourprofile" target="_blank" class="text-muted">
+                    <i class="bi bi-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    async function loadWorkshop() {
+        const params = new URLSearchParams(window.location.search);
+        const id = parseInt(params.get("id"));
+        let workshops;
+        try {
+            const res = await fetch("content\\events\\workshops.json");
+            workshops = await res.json();
+        } catch (e) {
+            console.warn("Fallback sample workshop", e);
+            workshops = [
+                {
+                    id:1,
+                    title:"Ascension",
+                    date:"01-09-2025",
+                    duration:"2h",
+                    description:"Transcend barriers. A session dedicated to exploring the domain of the angels.",
+                    image:"content\\events\\images\\italy.jpg"},
+            ];
+        }
+
+        const workshop = workshops.find(w => w.id === id);
+        if (!workshop) return;
+
+        document.title = workshop.title + " | Sun & Wind Ceramics";
+
+        const container = document.getElementById("workshop-detail");
+        container.innerHTML = `
+    <div class="col-md-8">
+      <div class="card shadow-sm workshop-detail-post">
+        <img src="${workshop.image}" class="card-img-top" alt="${workshop.title}">
+        <div class="card-body">
+          <h2>${workshop.title}</h2>
+          <p class="text-muted"><strong>Date:</strong> ${workshop.date} | <strong>Duration:</strong> ${workshop.duration}</p>
+          <p>${workshop.description}</p>
+          <a href="mailto:info@sunandwindceramics.com?subject=Booking: ${workshop.title}" class="btn btn-outline-dark mt-3">Book by Email</a>
+        </div>
+      </div>
+    </div>
+  `;
+    }
+    loadWorkshop();
+</script>
+
+</body>
+</html>

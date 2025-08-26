@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workshops | Solevento Ceramics</title>
+    <meta name="description" content="Discover unique, handcrafted ceramics and pottery. Explore a collection of one-of-a-kind mugs, vases, bowls, and decorative art pieces.">
+    <meta name="keywords" content="ceramics, pottery, handcrafted, handmade, artisan, art, studio, vase, mug, bowl, sculptural, home decor">
+    <!-- Bootstrap CSS -->
+    <link href="scripts/bootstrap-5.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="scripts/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Header & Navigation -->
+<header id="header-banner" class="py-3 shadow-sm sticky-top">
+    <div id="brand-name" class="container d-flex justify-content-between align-items-center">
+        <a href="index.html" class="navbar-brand h1 mb-0 fs-5 fw-bold">Solevento Ceramics</a>
+        <nav>
+            <ul class="nav">
+                <li class="nav-item"><a class="nav-link" href="workshops.html">Workshops</a></li>
+                <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Shop</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact-section">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <!-- Workshops Section -->
+    <section class="workshops-section py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Upcoming Workshops</h2>
+            <div id="workshops-list" class="row g-4">
+                <!-- Workshops will be injected here -->
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="text-muted border-top">
+    <div class="bg-light border-bottom py-2">
+        <div class="container d-flex align-items-center justify-content-between flex-wrap">
+            <!-- Logo -->
+            <img src="your-logo.png" alt="Logo" style="max-height:40px;" class="me-3">
+
+            <!-- Address -->
+            <span class="text-muted small me-3">
+                123 Main Street, Penela, Portugal | +1 234 567 890
+            </span>
+
+            <!-- Icons -->
+            <div class="override-bootstrap">
+                <a href="mailto:example@email.com" class="text-muted me-3">
+                    <i class="bi bi-envelope"></i>
+                </a>
+                <a href="https://instagram.com/yourprofile" target="_blank" class="text-muted">
+                    <i class="bi bi-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="scripts/bootstrap-5.3.7-dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    async function loadWorkshops() {
+        let workshops = [];
+        try {
+            const res = await fetch("content\\events\\workshops.json");
+            workshops = await res.json();
+        } catch (e) {
+            console.warn("Falling back to sample data (CORS/local dev issue)", e);
+            workshops = [
+                {
+                    id: 1,
+                    title:"Ascension",
+                    date:"01-09-2025",
+                    duration:"2 hours",
+                    description:"Get ready to ascend to the summit of Mount Olympus",
+                    image:"content\\events\\images\\Teleport.jpg"
+                },
+                {
+                    id: 1,
+                    title:"Descent",
+                    date:"02-09-2025",
+                    duration:"2 hours",
+                    description:"We can't possibly stay on Mount Olympus forever, prepare for our descent",
+                    image:"content\\events\\images\\descent.jpg"
+                }
+            ];
+        }
+
+        const container = document.getElementById("workshops-list");
+        container.innerHTML = workshops.map(w => `
+    <div class="col-md-4">
+      <div class="workshops-item card h-100 shadow-sm">
+        <img src="${w.image}" class="card-img-top" alt="${w.title}">
+        <div class="card-body">
+          <h5 class="card-title">${w.title}</h5>
+          <p class="text-muted mb-1"><strong>Date:</strong> ${w.date}</p>
+          <p class="text-muted mb-2"><strong>Duration:</strong> ${w.duration}</p>
+          <p class="card-text">${w.description}</p>
+          <a href="workshop.html?id=${w.id}" class="btn btn-outline-dark">View Details</a>
+        </div>
+      </div>
+    </div>
+  `).join("");
+    }
+    loadWorkshops();
+</script>
+</body>
+</html>

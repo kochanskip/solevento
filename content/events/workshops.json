@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "title": "Beginner Pottery Wheel",
+    "date": "12-09-2025",
+    "duration": "3 hours",
+    "shortDescription": "Learn the basics of wheel throwing and create your first ceramic mug.",
+    "longDescription": "In this hands-on workshop, you'll explore the fundamentals of wheel throwing. We'll cover centering clay, shaping, and finishing techniques. Perfect for beginners with no prior experience.",
+    "image": "content/events/images/MugCloseUp.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Glazing Masterclass",
+    "date": "20-09-2025",
+    "duration": "2 hours",
+    "shortDescription": "Discover different glazing techniques to give your ceramics personality.",
+    "longDescription": "This workshop dives deep into glazing methods including dipping, brushing, and layering. We'll also discuss how different glazes interact in the kiln. Suitable for all skill levels.",
+    "image": "content/events/images/Teleport.jpg"
+  }
+]
