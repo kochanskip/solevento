@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Workshops | Solevento Ceramics</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <meta name="description" content="Discover unique, handcrafted ceramics and pottery. Explore a collection of one-of-a-kind mugs, vases, bowls, and decorative art pieces.">
     <meta name="keywords" content="ceramics, pottery, handcrafted, handmade, artisan, art, studio, vase, mug, bowl, sculptural, home decor">
     <!-- Bootstrap CSS -->
@@ -15,44 +21,39 @@
 <body>
 
 <!-- Header & Navigation -->
-<header id="header-banner" class="py-2 shadow-sm sticky-top">
+<header id="header-banner" class="py-3">
     <nav class="navbar navbar-expand-md">
-        <div id="brand-name" class="container">
-            <!-- Brand / Logo -->
+        <div id="brand-name" class="container mx-auto">
             <!-- Logo -->
-            <a href="index.html">
-                <img src="images/logo.png" alt="Logo" style="max-height:70px;" class="me-3">
-            </a>
-
-            <!-- Hamburger button for mobile -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            <div>
+                <a href="index.html">
+                    <img src="images/logo.png" alt="Logo" style="max-height: 100px;margin-left: 25px;" class="me-3">
+                </a>
+            </div>
 
             <!-- Collapsible menu -->
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
                     <li class="nav-item"><a class="nav-link" href="workshops.html">Workshops</a></li>
-                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Shop</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
             </div>
+
+            <!-- Hamburger button for mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="margin-right: -32px;">
+                <span class="navbar-toggler-icon"></span>
+            </button>
         </div>
     </nav>
 </header>
 
 <main>
     <!-- Workshops Section -->
-    <section class="workshops-section py-5">
+    <section class="workshops-section py-3">
         <div class="container">
-            <h3 class="text-center mb-4">
-                <i class="bi bi-sun"></i>
-                Upcoming Workshops
-                <i class="bi bi-wind"></i>
-            </h3>
             <div id="workshops-list" class="row g-4">
                 <!-- Workshops will be injected here -->
             </div>
@@ -64,13 +65,11 @@
 <footer class="text-muted border-top">
     <div class="bg-light border-bottom py-2">
         <div class="container d-flex flex-column align-items-center text-center">
-            <!-- Address -->
-            <span class="text-muted small mb-2">
-        123 Main Street, Penela, Portugal | +1 234 567 890
-      </span>
-
             <!-- Icons -->
             <div class="override-bootstrap d-flex justify-content-center">
+                <span class="text-muted small me-3">
+                    <i class="bi bi-geo-alt-fill me-2"></i> Solevento ceramics, Penela, Portugal
+                </span>
                 <a href="mailto:example@email.com" class="text-muted me-3">
                     <i class="bi bi-envelope"></i>
                 </a>
@@ -88,41 +87,41 @@
     async function loadWorkshops() {
         let workshops = [];
         try {
-            const res = await fetch("content\\events\\workshops.json");
+            const res = await fetch("content/events/workshops.json");
             workshops = await res.json();
         } catch (e) {
             console.warn("Falling back to sample data (CORS/local dev issue)", e);
             workshops = [
                 {
                     id: 1,
-                    title:"Ascension",
+                    title:"Beginner Pottery Wheel",
                     date:"01-09-2025",
                     duration:"2 hours",
-                    description:"Get ready to ascend to the summit of Mount Olympus",
-                    image:"content\\events\\images\\Teleport.jpg"
+                    description:"Learn the basics of wheel throwing and create your first ceramic mug",
+                    image:"content/events/images/PotteryWheel.jpg"
                 },
                 {
-                    id: 1,
+                    id: 2,
                     title:"Descent",
                     date:"02-09-2025",
                     duration:"2 hours",
                     description:"We can't possibly stay on Mount Olympus forever, prepare for our descent",
-                    image:"content\\events\\images\\descent.jpg"
+                    image:"content/events/images/descent.jpg"
                 }
             ];
         }
 
         const container = document.getElementById("workshops-list");
         container.innerHTML = workshops.map(w => `
-    <div class="col-md-4">
+    <div class="col-md-4 product-card">
       <div class="workshops-item card h-100 shadow-sm">
-        <img src="${w.image}" class="card-img-top" alt="${w.title}">
+        <a href="workshop.html?id=${w.id}">
+            <img src="${w.image}" class="product-image card-img-top" alt="${w.title}">
+        </a>
+
         <div class="card-body">
           <h5 class="card-title">${w.title}</h5>
-          <p class="text-muted mb-1"><strong>Date:</strong> ${w.date}</p>
-          <p class="text-muted mb-2"><strong>Duration:</strong> ${w.duration}</p>
           <p class="card-text">${w.description}</p>
-          <a href="workshop.html?id=${w.id}" class="btn btn-outline-dark">View Details</a>
         </div>
       </div>
     </div>

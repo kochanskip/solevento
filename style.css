@@ -1,10 +1,38 @@
 /* Custom styles to work with Bootstrap */
 
 /* General and font styling is now handled by Bootstrap */
+html, body {
+    height: 100%;
+}
+
 body {
+    display: flex;
+    flex-direction: column;
     scroll-behavior: smooth;
-    background-color: #FFEABC;
+    background-color: #005a85;
     color: #322c29;
+
+    font-family: "Noto Sans Display", sans-serif;
+}
+
+h1, h2, h3 {
+    font-weight: 600;
+}
+
+h4, h5, h6 {
+    font-weight: 500;
+}
+
+p {
+    font-weight: 300;
+}
+
+li {
+    font-family: "Red Hat Text", sans-serif;
+}
+
+main {
+    flex: 1;
 }
 
 .image-col {
@@ -13,20 +41,28 @@ body {
     padding: 0;
 }
 
+.product-title {
+    color: #fce76e;
+}
+
 .text-col {
     flex: 0 0 52%;   /* adjust percentage here */
     max-width: 52%;
 }
 
+.image-text-right{
+    background: #497d7f
+}
+
 .craft-image {
     width: 100%;
-    max-height: 400px;
+    max-height: 600px;
     object-fit: cover;
     display: block;
 }
 
 .craft-section {
-    background-color: #ffd498;
+    background-color: white;
 }
 
 /* Custom styles for gallery product cards */
@@ -47,58 +83,87 @@ body {
 }
 
 #header-banner {
-     background-color: #73c1cd;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    background: rgba(255, 255, 255, 0); /* semi-transparent */
 }
 
-/* Navbar and custom link colors */
 .nav-link {
-    font-size: larger;
+    font-size: x-large;
     letter-spacing: 1px;
-    color: #fae676;
-    font-weight: 900;
+    color: white;
 }
 
 .nav-link:hover {
-    color: #EE887A !important;
+    color: #fbe671 !important;
 }
 
 .nav-link:active {
-    color: #b45142 !important;
+    color: #fbe671 !important;
 }
 
 footer {
-    background-color: #73c1cd;
+    background-color: #005a85;
 }
 
 .custom-section {
-    background-color: #fceeed;
+    background-color: #005a85;
 }
 
 .override-bootstrap > a {
     text-decoration:none;
 }
 
-.custom-btn-outline {
+.workshops-btn-section {
+    padding: 10px;
+    float: right;
+}
+
+.workshops-btn, .email-btn {
+    font-size: medium;
+}
+
+.btn-warning {
+    padding: 20px 40px 20px 40px;
+    --bs-btn-hover-color: #005a85; /* darker shade for hover */
+}
+
+.dm-serif-text-regular {
+    font-family: "DM Serif Text", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.dm-serif-text-regular-italic {
+    font-family: "DM Serif Text", serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.custom-btn{
+    padding: 20px 40px 20px 40px;
     --bs-btn-color: #fff; /* text on normal state */
-    --bs-btn-bg: #73c1cd; /* base background */
-    --bs-btn-border-color: #73c1cd;
+    --bs-btn-bg: #005a85; /* base background */
+    --bs-btn-border-color: #005a85;
+    --bs-btn-background-hover: #005a85;
+    --bs-btn-active-bg: #005a85;
+    --bs-btn-active-border-color: #005a85;
 
-    --bs-btn-hover-color: #fff;
-    --bs-btn-hover-bg: #EE887A; /* darker shade for hover */
-    --bs-btn-hover-border-color: #EE887A;
-
-    --bs-btn-focus-shadow-rgb: 226, 140, 128; /* glow in brand colour */
-
-    --bs-btn-active-color: #fff;
-    --bs-btn-active-bg: #b45142;; /* even darker shade for active */
-    --bs-btn-active-border-color: #b45142;
-    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.15);
-
-    --bs-btn-disabled-color: #f1d5d2; /* muted text */
-    --bs-btn-disabled-bg: #EAC0BB; /* light pastel background */
-    --bs-btn-disabled-border-color: #EAC0BB;
+    --bs-btn-hover-color: #fbe671; /* darker shade for hover */
+    --bs-btn-hover-background-color: #005a85;
+    --bs-btn-hover-bg: #005a85;
+    --bs-btn-hover-border-color: #005a85;
+    --bs-btn-active-color: #fbe671;
 
     --bs-gradient: none;
+}
+
+.custom-btn-outline {
+    font-size: x-large;
 }
 
 /* Carousel controls on hover */
@@ -117,20 +182,21 @@ footer {
 }
 
 /* Updated CSS to fix the carousel image height issue and width */
-.carousel-section {
+.home-image-section {
     max-width: 100%; /* Limits the max-width of the entire carousel container */
     margin: 0 auto; /* Centers the container on the page */
 }
 
-.carousel-item > img {
+.home-image > img {
     display: block;
     width: 100%;
     object-fit: cover;
     object-position: 0 54%;
-    height: 420px;
+    height: 740px;
 }
-.carousel-item {
-    overflow: hidden; /* ensure no lines from fractional pixels */
+
+.container {
+    color: white;
 }
 
 .workshops-item > img {
@@ -139,15 +205,16 @@ footer {
 }
 
 .workshop-detail-post > img {
-    width: 100%;
+    height: 420px;
     display: block;
 }
 
 h2 {
-    color: #2F3E4E;
-    font-weight: 300;
-    font-style: normal;
-    letter-spacing: .05em;
+    color: white;
+}
+
+h3 {
+    color: white;
 }
 
 @media (max-width: 767px) {

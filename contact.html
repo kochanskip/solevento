@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | Solevento Ceramics</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <meta name="description" content="Get in touch with Solevento Ceramics. Visit our studio or send us a message.">
     <meta name="keywords" content="ceramics, pottery, contact, studio, handmade, artisan">
     <!-- Bootstrap CSS -->
@@ -15,78 +21,70 @@
 <body>
 
 <!-- Header & Navigation -->
-<header id="header-banner" class="py-2 shadow-sm sticky-top">
+<header id="header-banner" class="py-3">
     <nav class="navbar navbar-expand-md">
-        <div id="brand-name" class="container">
+        <div id="brand-name" class="container mx-auto">
             <!-- Logo -->
-            <a href="index.html">
-                <img src="images/logo.png" alt="Logo" style="max-height:70px;" class="me-3">
-            </a>
-
-            <!-- Hamburger button -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            <div>
+                <a href="index.html">
+                    <img src="images/logo.png" alt="Logo" style="max-height: 100px;margin-left: 25px;" class="me-3">
+                </a>
+            </div>
 
             <!-- Collapsible menu -->
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
                     <li class="nav-item"><a class="nav-link" href="workshops.html">Workshops</a></li>
-                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Shop</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
             </div>
+
+            <!-- Hamburger button for mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="margin-right: -32px;">
+                <span class="navbar-toggler-icon"></span>
+            </button>
         </div>
     </nav>
 </header>
 
 <main>
     <!-- Contact Section -->
-    <section class="about-section py-5">
+    <section class="about-section py-3">
         <div class="container">
-            <h3 class="text-center mb-4">
-                <i class="bi bi-sun"></i>
-                Contact Us
-                <i class="bi bi-wind"></i>
-            </h3>
             <div class="row align-items-stretch g-4">
                 <!-- Map -->
                 <div class="col-md-6 d-flex">
                     <div class="w-100 d-flex align-items-center justify-content-center bg-light rounded shadow h-100">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d538.8034037308283!2d-8.392185183870494!3d40.03127184411585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd22f363eb026caf%3A0xa7a40a38b10e9c1d!2sR.%20Nossa%20Sra.%20da%20Concei%C3%A7%C3%A3o%206%2C%203230-289%20Penela%2C%20Portugal!5e0!3m2!1sen!2suk!4v1756558490444!5m2!1sen!2suk"
-                                width="100%" height="100%" style="border:0; min-height:300px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-
-                        </iframe>
-                    </div>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3055.164696184141!2d-8.393261323714025!3d40.02710217150496!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd22f3519e972ea5%3A0xec0e64828d64212a!2sSolevento%20ceramics!5e0!3m2!1sen!2suk!4v1771351192898!5m2!1sen!2suk"
+                                width="100%" height="100%" style="border:0; min-height:500px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>                    </div>
                 </div>
                 <!-- Contact details -->
-                <div class="col-md-6 d-flex">
-                    <div class="p-4 bg-white rounded shadow h-100 d-flex flex-column justify-content-center">
+                <div class="col-md-6">
+                    <div class="p-2 h-100 d-flex flex-column justify-content-start">
                         <p class="mb-3">
                             We're located in the beautiful town of Penela. Come find us!
                         </p>
+                        <div style="padding-bottom: 40px"></div>
                         <ul class="list-unstyled mb-3">
-                            <li><i class="bi bi-geo-alt-fill me-2"></i> 123 Main Street, Penela, Portugal</li>
+                            <li><i class="bi bi-geo-alt-fill me-2"></i> Solevento ceramics, Rua do, R. Convento de Santo António 17 C, 3230-252 Penela, Portugal</li>
                             <li><i class="bi bi-telephone-fill me-2"></i> +1 234 567 890</li>
                             <li>
                                 <i class="bi bi-envelope-fill me-2"></i>
-                                <a href="mailto:example@email.com" class="text-muted me-3">
+                                <a href="mailto:example@email.com" class="text-white me-2">
                                     info@sunandwindceramics.com
                                 </a>
                             </li>
                             <li>
                                 <i class="bi bi-instagram me-2"></i>
-                                <a href="mailto:example@email.com" class="text-muted me-3">
+                                <a href="mailto:example@email.com" class="text-white me-2">
                                     Solevento
                                 </a>
                             </li>
                         </ul>
-                        <a href="mailto:info@sunandwindceramics.com" class="btn custom-btn-outline btn-lg mt-3">
-                            Email Us
-                        </a>
                     </div>
                 </div>
             </div>
@@ -98,12 +96,11 @@
 <footer class="text-muted border-top">
     <div class="bg-light border-bottom py-2">
         <div class="container d-flex flex-column align-items-center text-center">
-            <!-- Address -->
-            <span class="text-muted small mb-2">
-        123 Main Street, Penela, Portugal | +1 234 567 890
-      </span>
             <!-- Icons -->
             <div class="override-bootstrap d-flex justify-content-center">
+                <span class="text-muted small me-3">
+                    <i class="bi bi-geo-alt-fill me-2"></i> Solevento ceramics, Penela, Portugal
+                </span>
                 <a href="mailto:example@email.com" class="text-muted me-3">
                     <i class="bi bi-envelope"></i>
                 </a>

@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery | Solevento Ceramics</title>
+    <title>Shop | Solevento Ceramics</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <meta name="description" content="Discover unique, handcrafted ceramics and pottery. Explore a collection of one-of-a-kind mugs, vases, bowls, and decorative art pieces.">
     <meta name="keywords" content="ceramics, pottery, handcrafted, handmade, artisan, art, studio, vase, mug, bowl, sculptural, home decor">
     <!-- Bootstrap CSS -->
@@ -15,109 +21,101 @@
 <body>
 
 <!-- Header & Navigation -->
-<header id="header-banner" class="py-2 shadow-sm sticky-top">
+<header id="header-banner" class="py-3">
     <nav class="navbar navbar-expand-md">
-        <div id="brand-name" class="container">
-            <!-- Brand / Logo -->
+        <div id="brand-name" class="container mx-auto">
             <!-- Logo -->
-            <a href="index.html">
-                <img src="images/logo.png" alt="Logo" style="max-height:70px;" class="me-3">
-            </a>
-
-            <!-- Hamburger button for mobile -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            <div>
+                <a href="index.html">
+                    <img src="images/logo.png" alt="Logo" style="max-height: 100px;margin-left: 25px;" class="me-3">
+                </a>
+            </div>
 
             <!-- Collapsible menu -->
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
                     <li class="nav-item"><a class="nav-link" href="workshops.html">Workshops</a></li>
-                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Shop</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
             </div>
+
+            <!-- Hamburger button for mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="margin-right: -32px;">
+                <span class="navbar-toggler-icon"></span>
+            </button>
         </div>
     </nav>
 </header>
 
+
 <main>
-    <!-- Gallery Section -->
-    <section class="gallery-section py-5">
+    <!-- Shop Section -->
+    <section class="py-3">
         <div class="container">
-            <h3 class="text-center mb-4">
-                <i class="bi bi-sun"></i>
-                Our Latest Creations
-                <i class="bi bi-wind"></i>
-            </h3>
             <div class="row g-4">
-                <!-- Card 1 -->
+                <!-- Card -->
                 <div class="col-md-4 product-card">
                     <div class="card h-100 shadow-sm">
-                        <a href="product-1.html">
-                            <img src="images/Products/Muffins.jpg"
-                                 class="card-img-top product-image" alt="Muffins">
+                        <a href="products/WhiteAndDarkBlueStripedTumbler.html">
+                            <img src="images/Products/WhiteAndDarkBlueStripedTumbler.jpg"
+                                 class="card-img-top product-image" alt="White and dark blue striped tumbler">
                         </a>
                         <div class="card-body text-center">
-                            <h5 class="card-title">Raspberry & White Chocolate Muffins</h5>
+                            <h5 class="card-title">White and dark blue striped tumbler</h5>
                         </div>
                     </div>
                 </div>
 
-                <!-- Card 2 -->
                 <div class="col-md-4 product-card">
                     <div class="card h-100 shadow-sm">
-                        <img src="https://placehold.co/600x600/34495e/ecf0f1?text=Midnight+Tumbler"
-                             class="card-img-top product-image" alt="Midnight Tumbler">
+                        <a href="product-2.html">
+                            <img src="images/Products/WhiteAndLightBlueStripedTumbler.jpg"
+                                 class="card-img-top product-image" alt="White and light blue striped tumbler">
+                        </a>
                         <div class="card-body text-center">
-                            <h5 class="card-title">Midnight Tumbler</h5>
+                            <h5 class="card-title">White and light blue striped tumbler</h5>
                         </div>
                     </div>
                 </div>
 
-                <!-- Card 3 -->
+                <!-- Card -->
                 <div class="col-md-4 product-card">
                     <div class="card h-100 shadow-sm">
-                        <img src="https://placehold.co/600x600/f5f5dc/2c3e50?text=Sculptural+Spire+Vase"
-                             class="card-img-top product-image" alt="Sculptural Spire Vase">
+                        <a href="product-3.html">
+                            <img src="images/Products/WavyWhiteTumbler.jpg"
+                                 class="card-img-top product-image" alt="Wavy white tumbler">
+                        </a>
                         <div class="card-body text-center">
-                            <h5 class="card-title">Sculptural Spire Vase</h5>
+                            <h5 class="card-title">Wavy white tumbler</h5>
                         </div>
                     </div>
                 </div>
 
-                <!-- Card 4 -->
+                <!-- Card -->
                 <div class="col-md-4 product-card">
                     <div class="card h-100 shadow-sm">
-                        <img src="https://placehold.co/600x600/556b2f/ecf0f1?text=Forest+Dweller+Mug"
-                             class="card-img-top product-image" alt="Forest Dweller Mug">
+                        <a href="product-4.html">
+                            <img src="images/Products/RedLampShade.jpg"
+                                 class="card-img-top product-image" alt="Red lamp shade">
+                        </a>
                         <div class="card-body text-center">
-                            <h5 class="card-title">Forest Dweller Mug</h5>
+                            <h5 class="card-title">Red lamp shade</h5>
                         </div>
                     </div>
                 </div>
 
-                <!-- Card 5 -->
+                <!-- Card -->
                 <div class="col-md-4 product-card">
                     <div class="card h-100 shadow-sm">
-                        <img src="https://placehold.co/600x600/8b4513/f5f5dc?text=Rustic+Platter"
-                             class="card-img-top product-image" alt="Rustic Serving Platter">
+                        <a href="product-4.html">
+                            <img src="images/Products/EarthenBrittleVase.jpg"
+                                 class="card-img-top product-image" alt="Earthen brittle vase">
+                        </a>
                         <div class="card-body text-center">
-                            <h5 class="card-title">Rustic Serving Platter</h5>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 6 -->
-                <div class="col-md-4 product-card">
-                    <div class="card h-100 shadow-sm">
-                        <img src="https://placehold.co/600x600/f4a460/2c3e50?text=Desert+Vessel"
-                             class="card-img-top product-image" alt="Desert Sands Vessel">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Desert Sands Vessel</h5>
+                            <h5 class="card-title">Earthen brittle vase</h5>
                         </div>
                     </div>
                 </div>
@@ -131,13 +129,11 @@
 <footer class="text-muted border-top">
     <div class="bg-light border-bottom py-2">
         <div class="container d-flex flex-column align-items-center text-center">
-            <!-- Address -->
-            <span class="text-muted small mb-2">
-        123 Main Street, Penela, Portugal | +1 234 567 890
-      </span>
-
             <!-- Icons -->
             <div class="override-bootstrap d-flex justify-content-center">
+                <span class="text-muted small me-3">
+                    <i class="bi bi-geo-alt-fill me-2"></i> Solevento ceramics, Penela, Portugal
+                </span>
                 <a href="mailto:example@email.com" class="text-muted me-3">
                     <i class="bi bi-envelope"></i>
                 </a>
