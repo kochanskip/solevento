@@ -41,6 +41,14 @@ main {
     padding: 0;
 }
 
+.contact-details {
+    padding-top: 40px;
+}
+
+.content {
+    padding-top:20px;
+}
+
 .product-title {
     color: #fce76e;
 }
@@ -54,15 +62,69 @@ main {
     background: #497d7f
 }
 
-.craft-image {
+/* Shared image behaviour */
+.craft-image,
+.product-detail-image {
     width: 100%;
-    max-height: 600px;
-    object-fit: cover;
     display: block;
 }
 
+/* Craft section */
 .craft-section {
     background-color: white;
+}
+
+/* Homepage / gallery craft images */
+.craft-image {
+    max-height: 600px;
+    object-fit: cover;
+}
+
+.product-detail-image {
+    height: 600px;
+    object-fit: cover;
+    margin: auto;
+    cursor: zoom-in;
+    transition: transform 0.15s ease;
+}
+
+.product-detail-image.zoomed {
+    transform: scale(2);
+    cursor: zoom-out;
+}
+
+/* Carousel alignment */
+.carousel-item {
+    text-align: center;
+}
+
+/* Thumbnails container */
+.product-thumbnails {
+    gap: 10px;
+}
+
+/* Thumbnail images */
+.product-thumb {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    cursor: pointer;
+
+    opacity: 0.6;
+    border: 2px solid transparent;
+
+    transition: opacity 0.2s ease, border-color 0.2s ease;
+}
+
+/* Thumbnail hover */
+.product-thumb:hover {
+    opacity: 1;
+}
+
+/* Active thumbnail */
+.product-thumb.active-thumb {
+    opacity: 1;
+    border-color: #fce76e;
 }
 
 /* Custom styles for gallery product cards */
@@ -118,13 +180,14 @@ footer {
     text-decoration:none;
 }
 
-.workshops-btn-section {
-    padding: 10px;
-    float: right;
+.email-btn {
+    font-size: medium;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.workshops-btn, .email-btn {
-    font-size: medium;
+.email-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 .btn-warning {

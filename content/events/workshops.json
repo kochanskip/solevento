@@ -1,20 +1,22 @@
 [
   {
     "id": 1,
-    "title": "Beginner Pottery Wheel",
-    "date": "12-09-2025",
-    "duration": "3 hours",
-    "description": "Learn the basics of wheel throwing and create your first ceramic mug.",
-    "longDescription": "In this hands-on workshop, you'll explore the fundamentals of wheel throwing. We'll cover centering clay, shaping, and finishing techniques. Perfect for beginners with no prior experience.",
-    "image": "content/events/images/PotteryWheel.jpg"
+    "title": "Pottery Wheel - Beginner",
+    "date": "Scheduled individually",
+    "duration": "1.5 hours",
+    "description": "Learn the basics of wheel throwing and create your first ceramic mug",
+    "longDescription": "Discover the joy of shaping clay on the pottery wheel in this beginner friendly one-on-one workshop. You'll learn the basics of wheel throwing whilst creating your first ever ceramic mug or bowl in a relaxing and supportive environment.",
+    "requirements": "No experience needed.",
+	"image": "content/events/images/PotteryWheel.jpg"
   },
   {
     "id": 2,
-    "title": "Glazing Masterclass",
-    "date": "20-09-2025",
-    "duration": "2 hours",
-    "description": "Discover different glazing techniques to give your ceramics personality.",
-    "longDescription": "This workshop dives deep into glazing methods including dipping, brushing, and layering. We'll also discuss how different glazes interact in the kiln. Suitable for all skill levels.",
-    "image": "content/events/images/descent.jpg"
+    "title": "Pottery Wheel - Intermediate",
+    "date": "Scheduled individually",
+    "duration": "1.5 hours",
+    "description": "Already learnt the basics? Have a go at our intermediate workshop to further improve your skills",
+    "longDescription": "Build confidence with the wheel and develop more advanced throwing techniques in this one-on-one workshop. Refine your centering, shape more complex forms and feel more in control of your future projects.",",
+    "requirements": "Basic experience with the wheel recommended.",
+	"image": "content/events/images/PotteryWheel.jpg"
   }
 ]

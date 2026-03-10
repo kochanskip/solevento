@@ -94,10 +94,20 @@
             workshops = [
                 {
                     id:1,
-                    title:"Beginner Pottery Wheel",
-                    date:"01-09-2025",
-                    duration:"2h",
-                    longDescription:"Transcend barriers. A session dedicated to exploring the domain of the angels.",
+                    title:"Pottery Wheel - Beginner",
+                    date:"Scheduled individually",
+                    duration:"1.5h",
+                    longDescription:"Discover the joy of shaping clay on the pottery wheel in this beginner friendly one-on-one workshop. You'll learn the basics of wheel throwing whilst creating your first ever ceramic mug or bowl in a relaxing and supportive environment.",
+                    requirements:"No experience needed.",
+                    image:"content/events/images/PotteryWheel.jpg"
+                },
+                {
+                    id:2,
+                    title:"Pottery Wheel - Intermediate",
+                    date:"Scheduled individually",
+                    duration:"1.5h",
+                    longDescription:"Build confidence with the wheel and develop more advanced throwing techniques in this one-on-one workshop. Refine your centering, shape more complex forms and feel more in control of your future projects.",
+                    requirements:"Basic experience with the wheel recommended.",
                     image:"content/events/images/PotteryWheel.jpg"
                 },
             ];
@@ -122,27 +132,23 @@
 
           <div class="col-md-6">
             <div class="p-2 h-100 d-flex flex-column justify-content-start">
-
-              <div>
                 <h4 class="product-title">${workshop.title}</h4>
-              </div>
-
-              <div style="padding-top:10px;">
-                <strong>Date:</strong> ${workshop.date}<br>
-                <strong>Duration:</strong> ${workshop.duration}
-              </div>
-
-              <div style="padding-top:20px;">
-                <p>${workshop.longDescription}</p>
-              </div>
-
-              <div class="mt-auto">
-                <a href="mailto:info@sunandwindceramics.com?subject=Booking: ${workshop.title}"
-                   class="btn email-btn btn-warning">
-                   Book by Email
-                </a>
-              </div>
-
+                <div class="content">
+                  <div>
+                    <p>${workshop.longDescription}</p>
+                    <p>${workshop.requirements}</p>
+                  </div>
+                  <div>
+                      <strong>Date:</strong> ${workshop.date}<br>
+                      <strong>Duration:</strong> ${workshop.duration}
+                    </div>
+                </div>
+                <div class="align-self-center">
+                    <a href="mailto:info@sunandwindceramics.com?subject=Booking: ${workshop.title}"
+                       class="btn email-btn btn-warning">
+                       Book by Email
+                    </a>
+                  </div>
             </div>
           </div>
 
