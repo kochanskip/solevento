@@ -61,6 +61,7 @@ main {
     padding-top: 10px;
 }
 
+.faqs-title,
 .product-price,
 .product-title {
     color: #fce76e;
@@ -177,16 +178,8 @@ main {
     color: #fbe671 !important;
 }
 
-.nav-link:active {
+.nav-link.active {
     color: #fbe671 !important;
-}
-
-footer {
-    background-color: #005a85;
-}
-
-.custom-section {
-    background-color: #005a85;
 }
 
 .override-bootstrap > a {

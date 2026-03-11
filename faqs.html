@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Frequently Asked Questions | Solevento Ceramics</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <meta name="description" content="Frequently asked questions about Solevento Ceramics, our pottery, workshops, and ordering process.">
+
+    <link href="scripts/bootstrap-5.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="scripts/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- Header -->
+<header id="header-banner" class="py-3">
+    <nav class="navbar navbar-expand-md">
+        <div id="brand-name" class="container mx-auto">
+            <button class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#mobileMenu"
+                    aria-controls="mobileMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div>
+                <a href="index.html">
+                    <img src="images/logo.png" alt="Logo" style="max-height:100px;margin-left:25px;" class="me-3">
+                </a>
+            </div>
+
+            <div class="collapse navbar-collapse d-none d-md-flex">
+                <ul class="nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+                    <li class="nav-item"><a class="nav-link" href="workshops.html">Workshops</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="faqs.html">FAQs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Menu</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+
+        <div class="offcanvas-body">
+            <ul class="nav flex-column">
+                <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+                <li class="nav-item"><a class="nav-link" href="workshops.html">Workshops</a></li>
+                <li class="nav-item"><a class="nav-link active" href="faqs.html">FAQs</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+</header>
+
+<main>
+    <section class="faq-section py-4">
+        <div class="container">
+            <h4 class="text-center mb-4 faqs-title">Frequently Asked Questions</h4>
+            <div class="accordion" id="faqAccordion">
+                <!-- Question 1 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                            How can I purchase your ceramics?
+                        </button>
+                    </h2>
+
+                    <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Currently our online payment system is still being developed.
+                            To place an order please email us and we will arrange payment and delivery.
+                        </div>
+                    </div>
+                </div>
+                <!-- Question 2 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                            Do you ship internationally?
+                        </button>
+                    </h2>
+
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Yes, we can ship internationally. Shipping costs depend on the destination and the size of the item.
+                        </div>
+                    </div>
+                </div>
+                <!-- Question 3 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                            Are your ceramics dishwasher safe?
+                        </button>
+                    </h2>
+
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Most of our stoneware is dishwasher safe, but hand washing is recommended to preserve the glaze and finish.
+                        </div>
+                    </div>
+                </div>
+                <!-- Question 4 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                            Do you offer workshops?
+                        </button>
+                    </h2>
+
+                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Yes. We run small pottery workshops where participants can learn hand-building and throwing techniques.
+                            Please check the workshops page for upcoming dates.
+                        </div>
+                    </div>
+                </div>
+                <!-- Question 5 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                            Where are you located?
+                        </button>
+                    </h2>
+
+                    <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Our studio is located in Penela, Portugal. Visits may be possible by appointment.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+<!-- Footer -->
+<footer class="text-muted border-top">
+    <div class="bg-light border-bottom py-2">
+        <div class="container d-flex flex-column align-items-center text-center">
+            <!-- Icons -->
+            <div class="override-bootstrap d-flex justify-content-center">
+                <span class="text-muted small me-3">
+                    <i class="bi bi-geo-alt-fill me-2"></i> Solevento ceramics, Penela, Portugal
+                </span>
+                <a href="mailto:example@email.com" class="text-muted me-3">
+                    <i class="bi bi-envelope"></i>
+                </a>
+                <a href="https://instagram.com/yourprofile" target="_blank" class="text-muted">
+                    <i class="bi bi-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="scripts/bootstrap-5.3.7-dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
