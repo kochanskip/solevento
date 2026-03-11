@@ -27,10 +27,6 @@ p {
     font-weight: 300;
 }
 
-li {
-    font-family: "Red Hat Text", sans-serif;
-}
-
 main {
     flex: 1;
 }
@@ -61,6 +57,11 @@ main {
     padding-top:20px;
 }
 
+.product-price {
+    padding-top: 10px;
+}
+
+.product-price,
 .product-title {
     color: #fce76e;
 }
