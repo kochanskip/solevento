@@ -7,7 +7,8 @@
     "description": "Learn the basics of wheel throwing and create your first ceramic mug",
     "longDescription": "Discover the joy of shaping clay on the pottery wheel in this beginner friendly one-on-one workshop. You'll learn the basics of wheel throwing whilst creating your first ever ceramic mug or bowl in a relaxing and supportive environment.",
     "requirements": "No experience needed.",
-	"image": "content/events/images/PotteryWheel.jpg"
+	"image": "content/events/images/PotteryWheel.jpg",
+	"price": "€35"
   },
   {
     "id": 2,
@@ -17,6 +18,19 @@
     "description": "Already learnt the basics? Have a go at our intermediate workshop to further improve your skills",
     "longDescription": "Build confidence with the wheel and develop more advanced throwing techniques in this one-on-one workshop. Refine your centering, shape more complex forms and feel more in control of your future projects.",",
     "requirements": "Basic experience with the wheel recommended.",
-	"image": "content/events/images/PotteryWheel.jpg"
-  }
+	"image": "content/events/images/PotteryWheel.jpg",
+	"price": "€35"
+  },
+  {
+    "id": 3,
+    "title": "Throw and Decorate",
+    "date": "Scheduled individually",
+    "duration": "2.5 hours",
+    "description": "Discover throwing techniques and explore ways to personalise your piece, all in one session",
+    "longDescription": "Go further with your imagination and personalise your piece straight after throwing it. Whether you're a first time potter or have prior experience, this workshop gives you an opportunity to express yourself through one of the following decorative techniques:",",
+    "longDescriptionList" :["Carving (sgraffito)", "Stamping or crating textures", "Slip decoration", "Underglaze painting"],
+	"requirements": "No experience needed.",
+	"image": "content/events/images/PotteryWheel.jpg",
+	"price": "€35"
+  },
 ]

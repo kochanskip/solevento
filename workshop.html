@@ -25,6 +25,16 @@
 <header id="header-banner" class="py-3">
     <nav class="navbar navbar-expand-md">
         <div id="brand-name" class="container mx-auto">
+            <!-- Hamburger button for mobile -->
+            <button class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#mobileMenu"
+                    aria-controls="mobileMenu"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
             <!-- Logo -->
             <div>
                 <a href="index.html">
@@ -33,7 +43,7 @@
             </div>
 
             <!-- Collapsible menu -->
-            <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="collapse navbar-collapse d-none d-md-flex" id="navbarNav">
                 <ul class="nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
                     <li class="nav-item"><a class="nav-link" href="workshops.html">Workshops</a></li>
@@ -41,16 +51,32 @@
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
             </div>
-
-            <!-- Hamburger button for mobile -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="margin-right: -32px;">
-                <span class="navbar-toggler-icon"></span>
-            </button>
         </div>
     </nav>
-</header>
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Menu</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
 
+        <div class="offcanvas-body">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link" href="shop.html">Shop</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="workshops.html">Workshops</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</header>
 
 <main>
     <section class="workshop-section py-3">
@@ -110,6 +136,16 @@
                     requirements:"Basic experience with the wheel recommended.",
                     image:"content/events/images/PotteryWheel.jpg"
                 },
+                {
+                    id:3,
+                    title:"Throw and Decorate",
+                    date:"Scheduled individually",
+                    duration:"2.5h",
+                    longDescription:"Go further with your imagination and personalise your piece straight after throwing it. Whether you're a first time potter or have prior experience, this workshop gives you an opportunity to express yourself through one of the following decorative techniques:",
+                    longDescriptionList:["Carving (sgraffito)", "Stamping or crating textures", "Slip decoration", "Underglaze painting"],
+                    requirements:"No experience needed.",
+                    image:"content/events/images/PotteryWheel.jpg"
+                },
             ];
         }
 
@@ -136,6 +172,7 @@
                 <div class="content">
                   <div>
                     <p>${workshop.longDescription}</p>
+                    <div id="product-description-list"></div>
                     <p>${workshop.requirements}</p>
                   </div>
                   <div>
@@ -143,9 +180,9 @@
                       <strong>Duration:</strong> ${workshop.duration}
                     </div>
                 </div>
-                <div class="align-self-center">
+                <div class="btn-container">
                     <a href="mailto:info@sunandwindceramics.com?subject=Booking: ${workshop.title}"
-                       class="btn email-btn btn-warning">
+                       class="btn email-btn btn-block">
                        Book by Email
                     </a>
                   </div>
@@ -155,6 +192,18 @@
         </div>
       </div>
     `;
+
+        const ul = document.createElement("ul");
+
+        workshop.longDescriptionList?.forEach(item => {
+            const li = document.createElement("li");
+            li.textContent = item;
+            ul.appendChild(li);
+        });
+
+        document
+            .getElementById("product-description-list")
+            .appendChild(ul);
     }
 
     loadWorkshop();

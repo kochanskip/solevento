@@ -25,6 +25,16 @@
 <header id="header-banner" class="py-3" style="position: absolute;">
     <nav class="navbar navbar-expand-md">
         <div id="brand-name" class="container mx-auto">
+            <!-- Hamburger button for mobile -->
+            <button class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#mobileMenu"
+                    aria-controls="mobileMenu"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
             <!-- Logo -->
             <div>
                 <a href="index.html">
@@ -33,7 +43,7 @@
             </div>
 
             <!-- Collapsible menu -->
-            <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="collapse navbar-collapse d-none d-md-flex" id="navbarNav">
                 <ul class="nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
                     <li class="nav-item"><a class="nav-link" href="workshops.html">Workshops</a></li>
@@ -41,18 +51,34 @@
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
             </div>
-
-            <!-- Hamburger button for mobile -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="margin-right: -32px;">
-                <span class="navbar-toggler-icon"></span>
-            </button>
         </div>
     </nav>
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Menu</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+
+        <div class="offcanvas-body">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link" href="shop.html">Shop</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="workshops.html">Workshops</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
 </header>
 
 <main>
-  <!-- Image Carousel Section -->
   <section class="home-image-section">
         <div class="home-image">
           <img src="images/Carousel/PenelaView.jpeg" class="d-block w-100" alt="View of the outdoors from the studio">
@@ -131,8 +157,8 @@
     </section>
 
     <section class="hero-section py-3 text-center" style="margin-top: -30px;">
-        <div class="container">
-            <a href="shop.html" class="btn btn-primary btn-lg custom-btn custom-btn-outline">Browse more</a>
+        <div class="btn-container homepage-shop-btn">
+            <a href="shop.html" class="btn custom-btn">Browse more</a>
         </div>
     </section>
 </main>

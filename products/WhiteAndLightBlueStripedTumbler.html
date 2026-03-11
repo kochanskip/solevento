@@ -25,6 +25,16 @@
 <header id="header-banner" class="py-3">
     <nav class="navbar navbar-expand-md">
         <div id="brand-name" class="container mx-auto">
+            <!-- Hamburger button for mobile -->
+            <button class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#mobileMenu"
+                    aria-controls="mobileMenu"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
             <!-- Logo -->
             <div>
                 <a href="../index.html">
@@ -33,7 +43,7 @@
             </div>
 
             <!-- Collapsible menu -->
-            <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="collapse navbar-collapse d-none d-md-flex" id="navbarNav">
                 <ul class="nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="../shop.html">Shop</a></li>
                     <li class="nav-item"><a class="nav-link" href="../workshops.html">Workshops</a></li>
@@ -41,14 +51,31 @@
                     <li class="nav-item"><a class="nav-link" href="../contact.html">Contact</a></li>
                 </ul>
             </div>
-
-            <!-- Hamburger button for mobile -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="margin-right: -32px;">
-                <span class="navbar-toggler-icon"></span>
-            </button>
         </div>
     </nav>
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Menu</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+
+        <div class="offcanvas-body">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link" href="../shop.html">Shop</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../workshops.html">Workshops</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../contact.html">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
 </header>
 
 <main>
@@ -96,7 +123,7 @@
                             <p>Placeholder. Some text</p>
                         </div>
                         <div class="mt-auto">
-                            <a href="mailto:info@sunandwindceramics.com" class="btn email-btn btn-warning">
+                            <a href="mailto:info@sunandwindceramics.com" class="btn email-btn">
                                 Our payment system is still being developed, please email us to place an order!
                             </a>
                         </div>

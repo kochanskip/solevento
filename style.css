@@ -12,7 +12,7 @@ body {
     background-color: #005a85;
     color: #322c29;
 
-    font-family: "Noto Sans Display", sans-serif;
+    font-family: "Red Hat Text", sans-serif;
 }
 
 h1, h2, h3 {
@@ -43,6 +43,18 @@ main {
 
 .contact-details {
     padding-top: 40px;
+}
+
+.contact-details li {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.contact-details li i {
+    flex-shrink: 0;
+    margin-top: 3px;
 }
 
 .content {
@@ -180,53 +192,42 @@ footer {
     text-decoration:none;
 }
 
+.homepage-shop-btn {
+    margin-left: 7em;
+    margin-right: 7em;
+}
+
+.btn-container {
+    padding-top: 20px;
+}
+
+.custom-btn,
 .email-btn {
     font-size: medium;
+    background-color: #0487c6;
+    color: #fff;
+    padding: 10px;
+    width: 100%;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
 
-.email-btn:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.btn-warning {
-    padding: 20px 40px 20px 40px;
-    --bs-btn-hover-color: #005a85; /* darker shade for hover */
-}
-
-.dm-serif-text-regular {
-    font-family: "DM Serif Text", serif;
-    font-weight: 400;
-    font-style: normal;
-}
-
-.dm-serif-text-regular-italic {
-    font-family: "DM Serif Text", serif;
-    font-weight: 400;
-    font-style: italic;
-}
-
-.custom-btn{
-    padding: 20px 40px 20px 40px;
-    --bs-btn-color: #fff; /* text on normal state */
-    --bs-btn-bg: #005a85; /* base background */
-    --bs-btn-border-color: #005a85;
-    --bs-btn-background-hover: #005a85;
-    --bs-btn-active-bg: #005a85;
-    --bs-btn-active-border-color: #005a85;
+    --bs-btn-bg: #0487c6; /* base background */
+    --bs-btn-border-color: #0487c6;
+    --bs-btn-background-hover: #0487c6;
+    --bs-btn-active-bg: #0487c6;
+    --bs-btn-active-border-color: #0487c6;
 
     --bs-btn-hover-color: #fbe671; /* darker shade for hover */
-    --bs-btn-hover-background-color: #005a85;
-    --bs-btn-hover-bg: #005a85;
-    --bs-btn-hover-border-color: #005a85;
+    --bs-btn-hover-background-color: #0487c6;
+    --bs-btn-hover-bg: #0487c6;
+    --bs-btn-hover-border-color: #0487c6;
     --bs-btn-active-color: #fbe671;
 
     --bs-gradient: none;
 }
 
-.custom-btn-outline {
-    font-size: x-large;
+.email-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 /* Carousel controls on hover */
@@ -279,6 +280,21 @@ h2 {
 h3 {
     color: white;
 }
+.offcanvas {
+    background-color: #005a85;
+    opacity: 70%;
+    --bs-offcanvas-width: 50%;
+}
+
+.offcanvas .nav-link {
+    color: white;
+    font-size: 1.5rem;
+    padding: 12px 0;
+}
+
+.offcanvas .nav-link:hover {
+    color: #fce76e;
+}
 
 @media (max-width: 767px) {
     .craft-image, .carousel-item > img {
@@ -289,5 +305,11 @@ h3 {
 @media (max-width: 767px) {
     .product-card {
         transition: none;
+    }
+}
+
+@media (max-width: 767px) {
+    .home-image > img {
+        object-position: 30%;
     }
 }
