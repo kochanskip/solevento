@@ -1,0 +1,1 @@
+All rights reserved. No license granted.
