@@ -5,6 +5,10 @@ html, body {
     height: 100%;
 }
 
+html {
+    overflow-y: scroll;
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -160,12 +164,15 @@ main {
 
 #header-banner {
     position: relative;
-    top: 0;
-    left: 0;
     width: 100%;
     z-index: 1000;
+}
 
-    background: rgba(255, 255, 255, 0); /* semi-transparent */
+/* Homepage only */
+.home #header-banner {
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .nav-link {
@@ -251,6 +258,12 @@ main {
     object-fit: cover;
     object-position: 0 54%;
     height: 740px;
+}
+
+.workshop-header {
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #333; /* The line */
+    border-bottom-color: #fce76e;;
 }
 
 .container {
