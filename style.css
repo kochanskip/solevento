@@ -287,6 +287,20 @@ main {
     margin: 0 auto; /* Centers the container on the page */
 }
 
+.home-title-container {
+    padding-left: 7rem;
+    padding-right: 7rem;
+    background-color: #28344b99;
+}
+
+.home-title {
+    font-weight: 100;
+    letter-spacing: 2px;
+    line-height: 1.6;
+    text-align: center;
+    color: #fae598;
+}
+
 .home-image > img {
     display: block;
     width: 100%;
