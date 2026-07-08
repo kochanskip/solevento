@@ -86,9 +86,20 @@
 
 <main>
   <section class="home-image-section">
-        <div class="home-image">
-          <img src="images/Carousel/PenelaView.jpeg" class="d-block w-100" alt="View of the outdoors from the studio">
-        </div>
+      <div class="home-image">
+          <img src="images/Carousel/PenelaView-1200.webp" srcset="
+            images/Carousel/PenelaView-480.webp 480w,
+            images/Carousel/PenelaView-768.webp 768w,
+            images/Carousel/PenelaView-1200.webp 1200w,
+            images/Carousel/PenelaView-1600.webp 1600w"
+               sizes=
+                       "(max-width: 768px) 100vw,
+                       (max-width: 1200px) 100vw,
+                       1600px"
+               class="d-block w-100"
+               alt="View of the outdoors from the studio"
+               loading="lazy">
+      </div>
   </section>
 
     <!-- Shop Section -->
