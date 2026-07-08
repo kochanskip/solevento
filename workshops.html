@@ -88,7 +88,7 @@
     <!-- Workshops Section -->
     <section class="workshops-section py-3">
         <div class="container">
-            <h3 class="workshop-header">Private Sessions</h3>
+            <h3 class="section-heading">Private Sessions</h3>
             <div id="workshops-list" class="row g-4">
                 <!-- Workshops will be injected here -->
             </div>
@@ -163,12 +163,12 @@
       <div class="workshops-item card h-100 shadow-sm">
         <a href="workshop.html?id=${w.id}">
             <img src="${w.image}" class="product-image card-img-top" alt="${w.title}">
-        </a>
 
-        <div class="card-body">
-          <h5 class="card-title">${w.title}<span style="float: right">${w.price}</span></h5>
-          <p class="card-text">${w.description}</p>
-        </div>
+            <div class="card-body">
+              <h5 class="card-title">${w.title}<span style="float: right">${w.price}</span></h5>
+              <p class="card-text">${w.description}</p>
+            </div>
+        </a>
       </div>
     </div>
   `).join("");

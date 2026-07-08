@@ -65,10 +65,10 @@ main {
     padding-top: 10px;
 }
 
-.faqs-title,
+.subsection-title,
 .product-price,
 .product-title {
-    color: #fce76e;
+    color: #fae598;
 }
 
 .text-col {
@@ -142,7 +142,7 @@ main {
 /* Active thumbnail */
 .product-thumb.active-thumb {
     opacity: 1;
-    border-color: #fce76e;
+    border-color: #fae598;
 }
 
 /* Custom styles for gallery product cards */
@@ -179,14 +179,49 @@ main {
     font-size: x-large;
     letter-spacing: 1px;
     color: white;
+    text-decoration: none;
+    transition: color 0.2s ease;
 }
 
-.nav-link:hover {
-    color: #fbe671 !important;
+/* Unvisited link */
+.nav-link:link {
+    color: white;
 }
 
-.nav-link.active {
-    color: #fbe671 !important;
+/* Visited link */
+.nav-link:visited {
+    color: white;
+}
+
+/* Hover (only on devices that support hover) */
+@media (hover: hover) {
+    .nav-link:hover {
+        color: #fae598;
+    }
+}
+
+/* Keyboard navigation */
+.nav-link:focus-visible {
+    color: #fae598;
+    outline: 2px solid #fae598;
+    outline-offset: 4px;
+    border-radius: 2px;
+}
+
+/* Fallback for older browsers */
+.nav-link:focus {
+    color: #fae598;
+}
+
+/* While the link is being clicked/tapped */
+.nav-link:active {
+    color: #fae598;
+}
+
+/* Current page */
+.nav-link.active,
+.nav-link[aria-current="page"] {
+    color: #fae598;
 }
 
 .override-bootstrap > a {
@@ -260,14 +295,19 @@ main {
     height: 740px;
 }
 
-.workshop-header {
+.section-heading {
     padding-bottom: 0.5rem;
     border-bottom: 2px solid #333; /* The line */
-    border-bottom-color: #fce76e;;
+    border-bottom-color: white;
 }
 
 .container {
     color: white;
+}
+
+.workshops-item > a {
+    text-decoration: none;
+    color: inherit;
 }
 
 .workshops-item > img {
@@ -300,7 +340,19 @@ h3 {
 }
 
 .offcanvas .nav-link:hover {
-    color: #fce76e;
+    color: #fae598;
+}
+
+.faq-item {
+    padding-top: 2rem;
+}
+
+.faq-item > p {
+    font-size: large;
+}
+
+.faq-item > p > a {
+    color: inherit;
 }
 
 @media (max-width: 767px) {
