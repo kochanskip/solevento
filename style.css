@@ -117,12 +117,19 @@ main {
 }
 
 /* Thumbnails container */
+.product-thumbnails-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
 .product-thumbnails {
+    flex-wrap: nowrap;
     gap: 10px;
 }
 
 /* Thumbnail images */
 .product-thumb {
+    flex: 0 0 auto;
     width: 80px;
     height: 80px;
     object-fit: cover;
@@ -227,7 +234,7 @@ main {
 }
 
 .btn-container {
-    padding-top: 20px;
+    /*padding-top: 20px;*/
 }
 
 .custom-btn,
@@ -283,15 +290,15 @@ main {
 .home-title-container {
     padding-left: 7rem;
     padding-right: 7rem;
-    background-color: #28344b99;
 }
 
 .home-title {
     font-weight: 100;
-    letter-spacing: 2px;
-    line-height: 1.6;
+    font-size: 2.5rem;
+    font-style: italic;
+    line-height: 1.2;
     text-align: center;
-    color: #fae598;
+    color: white;
 }
 
 .home-image > img {

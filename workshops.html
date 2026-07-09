@@ -121,7 +121,7 @@
 <script src="scripts/bootstrap-5.3.7-dist/js/bootstrap.bundle.min.js"></script>
 <script>
     async function loadWorkshops() {
-        let workshops = [];
+        let workshops;
         try {
             const res = await fetch("content/events/workshops.json");
             workshops = await res.json();
