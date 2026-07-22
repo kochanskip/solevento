@@ -379,6 +379,12 @@ h3 {
     color: inherit;
 }
 
+@media (max-width: 1200px) {
+    .nav {
+        gap: 0;
+    }
+}
+
 @media (max-width: 767px) {
     .craft-image, .carousel-item > img {
         height: auto;
