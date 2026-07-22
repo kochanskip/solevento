@@ -179,8 +179,12 @@ main {
     z-index: 1000;
 }
 
+.nav{
+    margin-top: 2.6rem;
+}
+
 .nav-link {
-    font-size: x-large;
+    font-size: 1.6rem;
     letter-spacing: 1px;
     color: white;
     text-decoration: none;
@@ -204,6 +208,10 @@ main {
     }
 }
 
+.nav {
+    gap: 1.6rem;
+}
+
 /* Keyboard navigation */
 .nav-link:focus-visible {
     color: #fae598;
@@ -217,12 +225,10 @@ main {
     color: #fae598;
 }
 
-/* While the link is being clicked/tapped */
 .nav-link:active {
     color: #fae598;
 }
 
-/* Current page */
 .nav-link.active,
 .nav-link[aria-current="page"] {
     color: #fae598;
