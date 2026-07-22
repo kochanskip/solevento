@@ -183,12 +183,14 @@ main {
     margin-top: 2.6rem;
 }
 
+.navbar-nav {
+    gap: 1.6rem;
+}
+
 .nav-link {
-    font-size: 1.6rem;
-    letter-spacing: 1px;
-    color: white;
-    text-decoration: none;
-    transition: color 0.2s ease;
+    font-size: 1.4rem;
+    font-weight: 400;
+    letter-spacing: 0.05em;
 }
 
 /* Unvisited link */
@@ -386,18 +388,10 @@ h3 {
 }
 
 @media (max-width: 767px) {
-    .craft-image, .carousel-item > img {
-        height: auto;
-    }
-}
-
-@media (max-width: 767px) {
     .product-card {
         transition: none;
     }
-}
 
-@media (max-width: 767px) {
     .home-image > img {
         object-position: 30%;
     }
@@ -405,5 +399,9 @@ h3 {
     .home-title-container {
         padding-left: 0;
         padding-right: 0;
+    }
+
+    .craft-image, .carousel-item > img {
+        height: auto;
     }
 }
