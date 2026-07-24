@@ -27,6 +27,10 @@ h4, h5, h6 {
     font-weight: 500;
 }
 
+a {
+    color: white;
+}
+
 p {
     font-weight: 300;
 }
@@ -205,7 +209,7 @@ main {
 
 /* Hover (only on devices that support hover) */
 @media (hover: hover) {
-    .nav-link:hover {
+    a:hover {
         color: #fae598;
     }
 }
@@ -333,7 +337,6 @@ main {
 
 .workshops-item > a {
     text-decoration: none;
-    color: inherit;
 }
 
 .workshops-item > img {
@@ -377,8 +380,34 @@ h3 {
     font-size: large;
 }
 
-.faq-item > p > a {
-    color: inherit;
+.card-body {
+    color: #2F2A26;
+}
+
+.product-alert {
+    color: #2F2A26;
+}
+
+.opening-hours {
+    max-width: 380px;
+    padding-left: 2rem;
+}
+
+.opening-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 0.4rem 0;
+}
+
+.day {
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.hours {
+    text-align: right;
 }
 
 @media (max-width: 1200px) {

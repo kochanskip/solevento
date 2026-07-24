@@ -84,9 +84,17 @@
                 <!-- Image -->
                 <div class="col-md-6 d-flex">
                     <div class="w-100 d-flex align-items-center justify-content-center bg-light rounded shadow h-100">
-                        <img src="images/About/WaterfallView.webp"
-                             alt="View of a waterfall"
-                             class="img-fluid craft-image rounded">
+                        <img src="images/About/WaterfallView-1200.webp" srcset="
+                        images/About/WaterfallView-400.webp 400w,
+                        images/About/WaterfallView-600.webp 600w,
+                        images/About/WaterfallView-800.webp 800w,
+                        images/About/WaterfallView-1200.webp 1200w"
+                             sizes="(max-width: 768px) 100vw,
+                             (max-width: 1200px) 50vw,
+                             800px"
+                             class="img-fluid craft-image rounded"
+                             alt="Contemplating by a waterfall"
+                             loading="lazy">
                     </div>
                 </div>
 
