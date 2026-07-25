@@ -167,6 +167,11 @@ main {
 }
 
 /* Custom styles for gallery product cards */
+.card {
+    position: relative;
+    overflow: hidden;
+}
+
 .product-card {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -174,6 +179,23 @@ main {
 .product-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.product-card[data-stock="out-of-stock"] .product-image {
+    filter: grayscale(25%) brightness(0.7);
+}
+
+.product-card[data-stock="out-of-stock"] .card::after {
+    content: "OUT OF STOCK - REQUEST TO ORDER";
+    position: absolute;
+    top: 68%;
+    width: 100%;
+    padding: 0.75rem;
+    background: rgba(153, 153, 153, 0.5);
+    color: #fff;
+    text-align: center;
+    z-index: 10;
+    pointer-events: none;
 }
 
 .product-image {
@@ -436,12 +458,22 @@ h3 {
 }
 
 @media (max-width: 1200px) {
+    /*To be removed once we create separate left/right sections for name & price in cards in shop page*/
+    .card-title {
+        font-size: 1.1rem;
+    }
+
     .nav {
         gap: 0;
     }
 }
 
 @media (max-width: 767px) {
+    /*To be removed once we create separate left/right sections for name & price in cards in shop page*/
+    .card-title {
+        font-size: 1.1rem;
+    }
+
     .product-card {
         transition: none;
     }
