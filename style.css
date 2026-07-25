@@ -331,6 +331,10 @@ main {
     border-bottom-color: white;
 }
 
+.mobile-only {
+    display: none;
+}
+
 .container {
     color: white;
 }
@@ -410,6 +414,19 @@ h3 {
     text-align: right;
 }
 
+.filter-select {
+    width: 180px;
+}
+
+.product-toolbar .flex-grow-1 {
+    flex: 1 1 250px;
+}
+
+.product-toolbar .form-control,
+.product-toolbar .form-select {
+    height: 48px;
+}
+
 @media (max-width: 1200px) {
     .nav {
         gap: 0;
@@ -432,5 +449,9 @@ h3 {
 
     .craft-image, .carousel-item > img {
         height: auto;
+    }
+
+    .mobile-only {
+        display: block;
     }
 }

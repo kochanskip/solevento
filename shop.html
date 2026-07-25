@@ -80,10 +80,36 @@
     <!-- Shop Section -->
     <section class="py-3">
         <div class="container">
-            <h3 class="section-heading">Shop</h3>
-            <div class="row g-4">
+            <h3 class="section-heading">
+                <span class="mobile-only">Shop</span>
+            </h3>
+            <div class="product-toolbar d-flex flex-wrap align-items-center gap-3 mb-4">
+                <div class="flex-grow-1">
+                    <input
+                            id="searchProducts"
+                            type="search"
+                            class="form-control"
+                            placeholder="Search products...">
+                </div>
+                <select id="collectionFilter" class="form-select filter-select">
+                    <option value="">All collections</option>
+                    <option value="Forest Series">Forest Series</option>
+                </select>
+                <select id="sortProducts" class="form-select filter-select">
+                    <option value="featured">Featured</option>
+                    <option value="name">Name A-Z</option>
+                    <option value="priceAsc">Price: Low → High</option>
+                    <option value="priceDesc">Price: High → Low</option>
+                </select>
+            </div>
+            <div id="productContainer" class="row g-4">
                 <!-- Card -->
-                <div class="col-md-4 product-card">
+                <div class="col-md-4 product-card" data-name="Forest Series Sphere Cup"
+                     data-price="20"
+                     data-collection="Forest Series"
+                     data-material="Stoneware speckled clay"
+                     data-stock="in-stock"
+                     data-keywords="cup mug coffee tea drink kitchen ceramic handmade forest green gift">
                     <div class="card h-100 shadow-sm">
                         <a href="products/ForestSeries/SphereCup/ForestSeriesSphereCup.html">
                             <img src="images/Products/ForestSeries/SphereCup/ForestSphereCup1.jpeg"
@@ -97,7 +123,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 product-card">
+                <div class="col-md-4 product-card" data-name="Forest Series Mug"
+                     data-price="25"
+                     data-collection="Forest Series"
+                     data-material="Stoneware speckled clay"
+                     data-stock="in-stock"
+                     data-keywords="cup mug coffee tea drink kitchen ceramic handmade forest green gift">
                     <div class="card h-100 shadow-sm">
                         <a href="products/ForestSeries/Mug/ForestSeriesMug.html">
                             <img src="images/Products/ForestSeries/Mug/ForestMug1.jpeg"
@@ -139,6 +170,66 @@
 
 <!-- Bootstrap JS -->
 <script src="scripts/bootstrap-5.3.7-dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    const search = document.getElementById("searchProducts");
+    const collection = document.getElementById("collectionFilter");
+    const sort = document.getElementById("sortProducts");
+
+    const productContainer = document.querySelector("#productContainer");
+
+    function updateProducts() {
+        const searchTerm = search.value.toLowerCase().trim();
+        const selectedCollection = collection.value;
+
+        const cards = Array.from(
+            document.querySelectorAll(".product-card")
+        );
+
+        cards.forEach(card => {
+            const keywords = card.dataset.keywords.toLowerCase();
+            const name = card.dataset.name.toLowerCase();
+            const cardCollection = card.dataset.collection;
+
+            const matchesSearch =
+                searchTerm === "" ||
+                keywords.includes(searchTerm) ||
+                name.includes(searchTerm);
+
+            const matchesCollection =
+                selectedCollection === "" ||
+                cardCollection === selectedCollection;
+
+            card.style.display =
+                matchesSearch && matchesCollection
+                    ? ""
+                    : "none";
+        });
+
+        // Sorting
+        cards.sort((a, b) => {
+            switch (sort.value) {
+                case "name":
+                    return a.dataset.name.localeCompare(b.dataset.name);
+                case "priceAsc":
+                    return Number(a.dataset.price) - Number(b.dataset.price);
+                case "priceDesc":
+                    return Number(b.dataset.price) - Number(a.dataset.price);
+                default:
+                    return 0;
+            }
+        });
+
+        // Put cards back in sorted order
+        cards.forEach(card => {
+            productContainer.appendChild(card);
+        });
+    }
+
+    // React to changes
+    search.addEventListener("input", updateProducts);
+    collection.addEventListener("change", updateProducts);
+    sort.addEventListener("change", updateProducts);
+</script>
 
 </body>
 </html>
