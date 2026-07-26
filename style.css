@@ -457,23 +457,24 @@ h3 {
     height: 48px;
 }
 
-@media (max-width: 1200px) {
-    /*To be removed once we create separate left/right sections for name & price in cards in shop page*/
-    .card-title {
-        font-size: 1.1rem;
-    }
+.product-name {
+    flex: 1;
+    min-width: 0; /* Important: allows text to wrap instead of pushing the price */
+}
 
+.product-price-shop {
+    flex: 0 0 40px;   /* Reserve 40px for the price */
+    text-align: right;
+    white-space: nowrap;
+}
+
+@media (max-width: 1200px) {
     .nav {
         gap: 0;
     }
 }
 
 @media (max-width: 767px) {
-    /*To be removed once we create separate left/right sections for name & price in cards in shop page*/
-    .card-title {
-        font-size: 1.1rem;
-    }
-
     .product-card {
         transition: none;
     }
