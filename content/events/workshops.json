@@ -7,7 +7,7 @@
     "duration": "1.5 hours",
     "description": "Learn the basics of wheel throwing and create your first ceramic mug",
     "longDescription": "Discover the joy of shaping clay on the pottery wheel in this beginner friendly one-on-one workshop. You'll learn the basics of wheel throwing whilst creating your first ever ceramic mug or bowl in a relaxing and supportive environment.",
-    "requirements": "No experience needed.",
+    "requirements": "Private class with no experience needed.",
 	"image": "content/events/images/PotteryWheelBeginnerOriginal.webp",
 	"price": "€35"
   },
@@ -19,7 +19,7 @@
     "duration": "1.5 hours",
     "description": "Already learnt the basics? Have a go at our intermediate workshop to further improve your skills",
     "longDescription": "Build confidence with the wheel and develop more advanced throwing techniques in this one-on-one workshop. Refine your centering, shape more complex forms and feel more in control of your future projects.",
-    "requirements": "Basic experience with the wheel recommended.",
+    "requirements": "Private class with basic experience with the wheel recommended.",
 	"image": "content/events/images/PotteryWheelIntermediate.webp",
 	"price": "€35"
   },
@@ -32,7 +32,7 @@
     "description": "Discover throwing techniques and explore ways to personalise your piece, all in one session",
     "longDescription": "Go further with your imagination and personalise your piece straight after throwing it. Whether you're a first time potter or have prior experience, this workshop gives you an opportunity to express yourself through one of the following decorative techniques:",
     "longDescriptionList" :["Carving (sgraffito)", "Stamping or crating textures", "Slip decoration", "Underglaze painting"],
-	"requirements": "No experience needed.",
+	"requirements": "Private class with no experience needed.",
 	"image": "content/events/images/ThrowAndDecorate.webp",
 	"price": "€50"
   },
@@ -44,7 +44,7 @@
     "duration":"2 hours",
     "description":"Create a summer keepsake to hold onto precious moments and bring a little warmth to the winter ahead.",
     "longDescription":"Create a summer keepsake to hold onto precious moments and bring a little warmth to the winter ahead.",
-    "requirements": "No experience needed and family friendly.",
+    "requirements": "Join a group session where your teacher will guide you through the basics of handbuilding pottery. No experience needed — family friendly and suitable for all ages.",
     "image":"content/events/images/CeramicWorkshopEventImage.webp",
     "price": "€25"
   }
