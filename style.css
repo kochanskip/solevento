@@ -490,6 +490,46 @@ h3 {
     position: absolute;
 }
 
+/* Workshop carousel */
+.workshops-carousel {
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+.workshops-carousel .card-body {
+    text-align: left;
+}
+
+.workshops-carousel .carousel-item {
+    padding: 0.5rem;
+}
+
+.workshops-carousel .workshops-item {
+    height: 100%;
+}
+
+.workshops-carousel .product-image {
+    height: 220px;
+}
+
+.workshops-carousel .card-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.workshops-carousel .card-title span {
+    white-space: nowrap;
+}
+
+@media (max-width: 767px) {
+    .workshops-carousel {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
 
 @media (max-width: 1200px) {
     .opening-hours {

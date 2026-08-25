@@ -127,13 +127,46 @@
                                      loading="lazy">
                             </div>
                             <div class="forest-series-text">
-                                <p>Our brand new Forest Series has sprouted its roots. Check out the new collection inspired by woodland textures, natural streams
-                                    and the quiet beauty of nature.
+                                <p>Our brand new Forest Series has sprouted its roots. Inspired by woodland textures, natural streams and the quiet beauty of nature. Check out the new collection now in the <a href="shop.html">Shop</a>.
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+    <!-- Workshops Section -->
+    <section class="workshops-section py-3">
+        <div class="container">
+            <h3 class="section-heading"></h3>
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2>Workshops</h2>
+                <a href="workshops.html" class="btn btn-outline-light">
+                    View all workshops
+                </a>
+            </div>
+
+            <div id="workshopsCarousel" class="carousel slide workshops-carousel" data-bs-ride="carousel">
+                <div class="carousel-inner" id="workshops-carousel-inner">
+                    <!-- Workshops will be injected here -->
+                </div>
+
+                <button class="carousel-control-prev"
+                        type="button"
+                        data-bs-target="#workshopsCarousel"
+                        data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+
+                <button class="carousel-control-next"
+                        type="button"
+                        data-bs-target="#workshopsCarousel"
+                        data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
         </div>
     </section>
@@ -255,6 +288,139 @@
     </div>
 </footer>
 
+<script>
+    async function loadWorkshopCarousel() {
+        try {
+            let workshops;
+            try {
+                const res = await fetch("content/events/workshops.json");
+                workshops = await res.json();
+            } catch (e) {
+                console.warn("Falling back to sample data (CORS/local dev issue)", e);
+                workshops = [
+                    {
+                        id: 1,
+                        title:"Pottery Wheel - Beginner",
+                        category: "Private",
+                        date:"Scheduled individually",
+                        duration:"1.5 hours",
+                        description:"Learn the basics of wheel throwing and create your first ceramic mug or bowl.",
+                        image:"content/events/images/PotteryWheelBeginner.webp",
+                        price: "€35"
+                    },
+                    {
+                        id: 2,
+                        title:"Pottery Wheel - Intermediate",
+                        category: "Private",
+                        date:"Scheduled individually",
+                        duration:"1.5 hours",
+                        description:"Already learnt the basics? Have a go at our intermediate workshop to further improve your skills.",
+                        image:"content/events/images/PotteryWheelIntermediate.webp",
+                        price: "€35"
+                    },
+                    {
+                        id: 3,
+                        title:"Throw and Decorate",
+                        category: "Private",
+                        date:"Scheduled individually",
+                        duration:"2.5 hours",
+                        description:"Discover throwing techniques and explore ways to personalise your piece, all in one session.",
+                        image:"content/events/images/ThrowAndDecorate.webp",
+                        price: "€50"
+                    },
+                    {
+                        id: 4,
+                        title:"Ceramic Workshop",
+                        category: "Group",
+                        date:"30/08/2026",
+                        duration:"2 hours",
+                        description:"Create a summer keepsake to hold onto precious moments and bring a little warmth to the winter ahead.",
+                        image:"content/events/images/CeramicWorkshopEventImage.webp",
+                        price: "€25"
+                    }
+                ];
+            }
+
+            const container = document.getElementById("workshops-carousel-inner");
+
+            if (!container) return;
+
+            // Number of cards to display at each breakpoint
+            function getCardsPerSlide() {
+                if (window.innerWidth >= 992) return 3;
+                if (window.innerWidth >= 768) return 2;
+                return 1;
+            }
+
+            function renderCarousel() {
+                const cardsPerSlide = getCardsPerSlide();
+
+                let html = "";
+
+                for (let i = 0; i < workshops.length; i += cardsPerSlide) {
+
+                    const slideWorkshops = workshops.slice(i, i + cardsPerSlide);
+
+                    html += `
+                    <div class="carousel-item ${i === 0 ? "active" : ""}">
+                        <div class="row g-4 justify-content-center">
+                            ${slideWorkshops.map(w => `
+                                <div class="col-12 col-md-6 col-lg-4">
+                                    <div class="workshops-item card h-100 shadow-sm">
+
+                                        <a href="workshop.html?id=${w.id}">
+                                            <img
+                                                src="${w.image}"
+                                                class="product-image card-img-top"
+                                                alt="${w.title}"
+                                                loading="lazy"
+                                            >
+
+                                            <div class="card-body">
+                                                <div class="card-body">
+                                                    <div class="d-flex justify-content-between align-items-start gap-3">
+                                                        <h5 class="card-title mb-0">${w.title}</h5>
+                                                        <span class="text-nowrap">${w.price}</span>
+                                                    </div>
+
+                                                    <p class="card-text mt-2">${w.date}</p>
+                                                    <p class="card-text">${w.description}</p>
+                                                </div>
+                                            </div>
+                                        </a>
+
+                                    </div>
+                                </div>
+                            `).join("")}
+                        </div>
+                    </div>
+                `;
+                }
+
+                container.innerHTML = html;
+            }
+
+            renderCarousel();
+
+            // Re-render if the screen crosses a breakpoint
+            let lastCardsPerSlide = getCardsPerSlide();
+
+            window.addEventListener("resize", () => {
+                const newCardsPerSlide = getCardsPerSlide();
+
+                if (newCardsPerSlide !== lastCardsPerSlide) {
+                    lastCardsPerSlide = newCardsPerSlide;
+                    renderCarousel();
+                }
+            });
+
+        } catch (error) {
+            console.error("Unable to load workshops:", error);
+        }
+    }
+
+    loadWorkshopCarousel();
+</script>
 <!-- Bootstrap JS -->
 <script src="scripts/bootstrap-5.3.7-dist/js/bootstrap.bundle.min.js"></script>
 
