@@ -18,6 +18,9 @@
     <meta name="description" content="Solevento ceramics is an exciting new ceramics studio based in Penela, within the district of Coimbra in Portugal. We produce handmade ceramics and decorative art pieces, inspired by our natural surroundings as well as the sun and wind, for which the studio is named after. Purchase handmade artisanal pottery or come join a ceramic workshop in the heart of Portugal. We look forward to seeing you!">
     <meta name="keywords" content="solevento, portugal, penela, coimbra, ceramics, pottery, handcrafted, handmade, artisan, art, studio, vase, mug, bowl, sculptural, home decor, clay">
 
+    <!-- Preload the first carousel image and thumbnail -->
+    <link rel="preload" href="images/HomePage/News/ForestMug.jpeg" as="image" type="image/jpeg">
+
     <link href="scripts/bootstrap-5.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="scripts/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <!-- Custom CSS -->
@@ -119,7 +122,9 @@
                     <div>
                         <div class="h-100 d-flex flex-column">
                             <div class="forest-series-heading-container">
-                                <img src="images/ForestSeriesText.svg" alt="Forest Series Heading">
+                                <img src="images/ForestSeriesText.svg"
+                                     alt="Forest Series Heading"
+                                     loading="lazy">
                             </div>
                             <div class="forest-series-text">
                                 <p>Our brand new Forest Series has sprouted its roots. Check out the new collection inspired by woodland textures, natural streams
