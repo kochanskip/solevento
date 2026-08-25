@@ -2,6 +2,7 @@
   {
     "id": 1,
     "title": "Pottery Wheel - Beginner",
+    "category": "Private",
     "date": "Scheduled individually",
     "duration": "1.5 hours",
     "description": "Learn the basics of wheel throwing and create your first ceramic mug",
@@ -13,6 +14,7 @@
   {
     "id": 2,
     "title": "Pottery Wheel - Intermediate",
+    "category": "Private",
     "date": "Scheduled individually",
     "duration": "1.5 hours",
     "description": "Already learnt the basics? Have a go at our intermediate workshop to further improve your skills",
@@ -24,6 +26,7 @@
   {
     "id": 3,
     "title": "Throw and Decorate",
+    "category": "Private",
     "date": "Scheduled individually",
     "duration": "2.5 hours",
     "description": "Discover throwing techniques and explore ways to personalise your piece, all in one session",
@@ -32,5 +35,17 @@
 	"requirements": "No experience needed.",
 	"image": "content/events/images/ThrowAndDecorate.webp",
 	"price": "€50"
+  },
+  {
+    "id": 4,
+    "title":"Ceramic Workshop",
+    "category": "Group",
+    "date":"30/08/2026",
+    "duration":"2 hours",
+    "description":"Create a summer keepsake to hold onto precious moments and bring a little warmth to the winter ahead.",
+    "longDescription":"Create a summer keepsake to hold onto precious moments and bring a little warmth to the winter ahead.",
+    "requirements": "No experience needed and family friendly.",
+    "image":"content/events/images/CeramicWorkshopEventImage.webp",
+    "price": "€25"
   }
 ]

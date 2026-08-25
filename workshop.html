@@ -149,6 +149,17 @@
                     price: "€50",
                     image:"content/events/images/ThrowAndDecorate.webp"
                 },
+                {
+                    id: 4,
+                    title:"Ceramic Workshop",
+                    category: "Group",
+                    date:"30/08/2026",
+                    duration:"2 hours",
+                    longDescription:"Create a summer keepsake to hold onto precious moments and bring a little warmth to the winter ahead.",
+                    requirements: "No experience needed and family friendly.",
+                    price: "€25",
+                    image:"content/events/images/CeramicWorkshopEventImage.webp",
+                }
             ];
         }
 
@@ -162,7 +173,6 @@
         container.innerHTML = `
       <div class="col-12">
         <div class="row align-items-stretch">
-
           <div class="col-md-6 text-center mb-4 mb-md-0">
             <img src="${workshop.image}"
                  alt="${workshop.title}"
@@ -194,7 +204,6 @@
                   </div>
             </div>
           </div>
-
         </div>
       </div>
     `;
