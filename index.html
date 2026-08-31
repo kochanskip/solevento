@@ -54,7 +54,7 @@
                 <ul class="nav ms-auto">
                     <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
-                    <li class="nav-item"><a class="nav-link" href="workshops.html">Workshops</a></li>
+                    <li class="nav-item"><a class="nav-link" href="workshops.html">Workshops & Classes</a></li>
                     <li class="nav-item"><a class="nav-link" href="faqs.html">FAQs</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
@@ -71,7 +71,7 @@
             <ul class="nav flex-column">
                 <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
-                <li class="nav-item"><a class="nav-link" href="workshops.html">Workshops</a></li>
+                <li class="nav-item"><a class="nav-link" href="workshops.html">Workshops & Classes</a></li>
                 <li class="nav-item"><a class="nav-link" href="faqs.html">FAQs</a></li>
                 <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
@@ -127,7 +127,7 @@
                                      loading="lazy">
                             </div>
                             <div class="forest-series-text">
-                                <p>Our brand new Forest Series has sprouted its roots. Inspired by woodland textures, natural streams and the quiet beauty of nature. Check out the new collection now in the <a href="shop.html">Shop</a>.
+                                <p>Our brand new Forest Series has sprouted its roots. Inspired by woodland textures, natural streams and our beautiful surroundings. Check out our new collection now in the <a href="shop.html">Shop</a>.
                                 </p>
                             </div>
                         </div>
@@ -141,9 +141,9 @@
         <div class="container">
             <h3 class="section-heading"></h3>
             <div class="d-flex justify-content-between align-items-center mb-4">
-                <h2>Workshops</h2>
+                <h2>Workshops & Classes</h2>
                 <a href="workshops.html" class="btn btn-outline-light">
-                    View all workshops
+                    View all
                 </a>
             </div>
 
@@ -330,13 +330,23 @@
                     },
                     {
                         id: 4,
-                        title:"Ceramic Workshop",
+                        title:"Kids & Parents Ceramic Class",
                         category: "Group",
-                        date:"30/08/2026",
-                        duration:"2 hours",
-                        description:"Create a summer keepsake to hold onto precious moments and bring a little warmth to the winter ahead.",
-                        image:"content/events/images/CeramicWorkshopEventImage.webp",
-                        price: "€25"
+                        date:"Available from 15/09/2026",
+                        duration:"1.5 hours (x4)",
+                        description:"Weekly after school ceramics class for both kids and parents",
+                        image:"content/events/images/KidsAndParentsCeramicClass.webp",
+                        price: "€65"
+                    },
+                    {
+                        id: 5,
+                        title:"Kids Ceramic Class",
+                        category: "Group",
+                        date:"Available from 15/09/2026",
+                        duration:"1 hour (x4)",
+                        description:"Weekly after school ceramics class for kids",
+                        image:"content/events/images/KidsCeramicClass.webp",
+                        price: "€40"
                     }
                 ];
             }
@@ -367,27 +377,23 @@
                             ${slideWorkshops.map(w => `
                                 <div class="col-12 col-md-6 col-lg-4">
                                     <div class="workshops-item card h-100 shadow-sm">
-
                                         <a href="workshop.html?id=${w.id}">
                                             <img
                                                 src="${w.image}"
-                                                class="product-image card-img-top"
+                                                class="card-img-top"
                                                 alt="${w.title}"
                                             >
-
                                             <div class="card-body">
                                                 <div class="card-body">
                                                     <div class="d-flex justify-content-between align-items-start gap-3">
                                                         <h5 class="card-title mb-0">${w.title}</h5>
                                                         <span class="text-nowrap">${w.price}</span>
                                                     </div>
-
                                                     <p class="card-text mt-2">${w.date}</p>
                                                     <p class="card-text">${w.description}</p>
                                                 </div>
                                             </div>
                                         </a>
-
                                     </div>
                                 </div>
                             `).join("")}
@@ -395,7 +401,6 @@
                     </div>
                 `;
                 }
-
                 container.innerHTML = html;
             }
 

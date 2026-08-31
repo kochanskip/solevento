@@ -38,14 +38,27 @@
   },
   {
     "id": 4,
-    "title":"Ceramic Workshop",
+    "title":"Kids & Parents Ceramic Class",
     "category": "Group",
-    "date":"30/08/2026",
-    "duration":"2 hours",
-    "description":"Create a summer keepsake to hold onto precious moments and bring a little warmth to the winter ahead.",
-    "longDescription":"Create a summer keepsake to hold onto precious moments and bring a little warmth to the winter ahead.",
-    "requirements": "Join a group session where your teacher will guide you through the basics of handbuilding pottery. No experience needed — family friendly and suitable for all ages.",
-    "image":"content/events/images/CeramicWorkshopEventImage.webp",
-    "price": "€25"
+    "date":"Available from 15/09/2026",
+    "duration":"1.5 hours (x4)",
+    "description":"Weekly after school ceramics class for both kids and parents",
+    "longDescription":"Let your children's (and your own!) imagination flow at our weekly ceramics class. Perfect for families and for those seeking a weekly activity. Register your intertest and let me know which time and day works best for you, and we can try to make it happen!",
+    "longDescriptionList" :["All materials provided", "Firing and Glazing"],
+    "requirements": "Join a group session in our beautiful studio in Penela where your teacher will guide you through the basics of handbuilding pottery. No experience needed.",
+    "image":"content/events/images/KidsAndParentsCeramicClass.webp",
+    "price": "€65"
+  },
+  {
+    "id": 5,
+    "title":"Kids Ceramic Class",
+    "category": "Group",
+    "date":"Available from 15/09/2026",
+    "duration":"1 hour (x4)",
+    "description":"Weekly after school ceramics class for kids",
+    "longDescription":"Let your children's imagination flow at our weekly ceramics class. Perfect for those seeking an after school activity for their children. Here they will have the freedom to channel their energy and the guidance necessary to to create their own ceramic masterpiece. channel their energy in this weekly activity. Register your intertest and let me know which time and day works best for you.",
+    "requirements": "Join a group session in our beautiful studio in Penela where your teacher will guide you through the basics of handbuilding pottery. No experience needed.",
+    "image":"content/events/images/KidsCeramicClass.webp",
+    "price": "€40"
   }
 ]
