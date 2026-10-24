@@ -74,6 +74,14 @@ with the `sharp` Node package available (installed locally or through `NODE_PATH
 then run `node scripts/build-site.mjs`. The normal build uses the original photo
 as a fallback when optimized copies have not been generated yet.
 
+### Product gallery photo sizes
+
+Visible shop products use 1200px WebP gallery copies and 160px thumbnails from
+`images/product-display/`. Originals are preserved and hidden products are left
+unchanged. After adding or replacing photos, build the site, run
+`node scripts/build-product-images.mjs` with Sharp available, then rebuild the site.
+The generated mapping is stored in `content/pages/product-images.json`.
+
 ## License
 Copyright (c) 2026 Piotr Kochanski.
 

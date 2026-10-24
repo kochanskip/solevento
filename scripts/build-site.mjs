@@ -110,6 +110,28 @@ function decorate(html,lang,route,workshopId) {
 // Keep all product sources while controlling which collections appear in the shop.
 const shopCollections = new Set(readJSON('content/pages/shop-collections.json'));
 const hiddenShopProducts = readJSON('content/pages/hidden-shop-products.json');
+const productImagesPath='content/pages/product-images.json';
+const productImages=fs.existsSync(path.join(root,productImagesPath))?readJSON(productImagesPath):{routes:[],images:{}};
+function productDisplayImages(html,route) {
+ if(!productImages.routes.includes(route)) return html;
+ html=html.replace(/<img\b[^>]*>/g,tag=>{
+  const thumb=/class="[^"]*product-thumb/.test(tag);
+  if(!thumb && !/class="[^"]*product-detail-image/.test(tag))return tag;
+  const src=tag.match(/\bsrc="([^"]+)"/)?.[1];
+  const target=productImages.images[src]?.[thumb?160:1200];
+  if(!target || !fs.existsSync(path.join(root,target.slice(1))))return tag;
+  tag=tag.replace(/\bsrc="[^"]+"/,`src="${target}"`);
+  if(!/\bdecoding=/.test(tag))tag=tag.replace(/>$/,' decoding="async">');
+  return tag;
+ });
+ html=html.replace(/\bposter="([^"]+)"/g,(attr,src)=>productImages.images[src]?.[1200]?`poster="${productImages.images[src][1200]}"`:attr);
+ html=html.replace(/<link\b[^>]*rel="preload"[^>]*>/g,tag=>{
+  const src=tag.match(/\bhref="([^"]+)"/)?.[1],variants=productImages.images[src];
+  const target=variants?.[1200]||variants?.[160];
+  return target?tag.replace(/href="[^"]+"/,`href="${target}"`).replace(/type="image\/[^"]+"/,'type="image/webp"'):tag;
+ });
+ return html;
+}
 function shopImages(html) {
  return html.replace(/<img\b[^>]*>/g,tag=>{
   if(!/class="[^"]*\bproduct-image\b/.test(tag)) return tag;
@@ -147,7 +169,7 @@ for(const lang of languages) {
   let html=read(`content/pages/${lang}/${route}`);
   html=html.replace('{{privateCards}}',shared.filter(w=>w.category==='private').map(w=>card(lang,w)).join('\n')).replace('{{groupCards}}',shared.filter(w=>w.category==='group').map(w=>card(lang,w)).join('\n'));
   html=html.replace('{{workshopCarousel}}',shared.map((w,i)=>`<div class="carousel-item${i===0?' active':''}"><div class="row g-4 justify-content-center">${card(lang,w,'col-12 col-md-6 col-lg-4 workshop-carousel-card')}</div></div>`).join('\n'));
-  write(`${lang}/${route}`,decorate(route === 'shop.html' ? shopImages(availableShop(html)) : html,lang,route));
+  write(`${lang}/${route}`,decorate(route === 'shop.html' ? shopImages(availableShop(html)) : productDisplayImages(html,route),lang,route));
   generated.push(url(lang,route));
  }
  for(const w of shared) {
