@@ -1,0 +1,49 @@
+{
+  "1": {
+    "slug": "roda-de-oleiro-iniciantes",
+    "title": "Roda de oleiro — Iniciação",
+    "description": "Aprenda as bases da roda de oleiro e crie a sua primeira caneca de cerâmica.",
+    "longDescription": "Descubra o prazer de dar forma ao barro na roda de oleiro neste workshop individual de iniciação. Aprenderá as técnicas básicas enquanto cria a sua primeira caneca ou taça, num ambiente tranquilo e acolhedor.",
+    "requirements": "Aula individual. Não é necessária experiência prévia."
+  },
+  "2": {
+    "slug": "roda-de-oleiro-intermedio",
+    "title": "Roda de oleiro — Nível intermédio",
+    "description": "Já conhece as bases? Aprofunde as suas competências no nosso workshop de nível intermédio.",
+    "longDescription": "Ganhe confiança na roda de oleiro e desenvolva técnicas mais avançadas neste workshop individual. Aperfeiçoe a centragem do barro, explore formas mais complexas e sinta-se mais à vontade nos seus próximos projetos.",
+    "requirements": "Aula individual. Recomenda-se alguma experiência com a roda de oleiro."
+  },
+  "3": {
+    "slug": "modelar-na-roda-e-decorar",
+    "title": "Modelar na roda e decorar",
+    "description": "Descubra técnicas de roda de oleiro e explore formas de personalizar a sua peça, numa única sessão.",
+    "longDescription": "Dê asas à imaginação e personalize a sua peça logo após a modelação na roda. Quer esteja a começar ou já tenha experiência, este workshop permite-lhe expressar a sua criatividade através de uma das seguintes técnicas decorativas:",
+    "longDescriptionList": [
+      "Gravação (esgrafito)",
+      "Estampagem ou criação de texturas",
+      "Decoração com engobes",
+      "Pintura com cores de baixo vidrado"
+    ],
+    "requirements": "Aula individual. Não é necessária experiência prévia."
+  },
+  "4": {
+    "image": "/content/events/images/PtKidsAndParentsCeramicClass.jpeg",
+    "slug": "ceramica-criancas-e-pais",
+    "title": "Aulas de cerâmica para crianças e pais",
+    "description": "Aulas semanais de cerâmica depois da escola, para crianças e pais.",
+    "longDescription": "Deixe fluir a imaginação dos seus filhos — e a sua também! — nas nossas aulas semanais de cerâmica. Ideais para famílias e para quem procura uma atividade regular. Manifeste o seu interesse e diga-nos que dia e horário lhe convêm, para tentarmos encontrar uma solução!",
+    "longDescriptionList": [
+      "Todos os materiais incluídos",
+      "Cozedura e vidragem"
+    ],
+    "requirements": "Participe numa aula de grupo no nosso bonito atelier em Penela, onde aprenderá as bases da modelação manual em barro com orientação da professora. Não é necessária experiência prévia."
+  },
+  "5": {
+    "image": "/content/events/images/PtKidsCeramicClass.jpeg",
+    "slug": "ceramica-criancas",
+    "title": "Aulas de cerâmica para crianças",
+    "description": "Aulas semanais de cerâmica para crianças, depois da escola.",
+    "longDescription": "Deixe fluir a imaginação dos seus filhos nas nossas aulas semanais de cerâmica. Ideais para quem procura uma atividade depois da escola. As crianças terão liberdade para canalizar a sua energia e a orientação necessária para criar a sua própria obra de cerâmica. Manifeste o seu interesse e diga-nos que dia e horário lhe convêm.",
+    "requirements": "Participe numa aula de grupo no nosso bonito atelier em Penela, onde aprenderá as bases da modelação manual em barro com orientação da professora. Não é necessária experiência prévia."
+  }
+}

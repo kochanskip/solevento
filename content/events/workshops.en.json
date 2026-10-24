@@ -1,0 +1,47 @@
+{
+  "1": {
+    "slug": "pottery-wheel-beginner",
+    "title": "Pottery Wheel - Beginner",
+    "description": "Learn the basics of wheel throwing and create your first ceramic mug",
+    "longDescription": "Discover the joy of shaping clay on the pottery wheel in this beginner friendly one-on-one workshop. You'll learn the basics of wheel throwing whilst creating your first ever ceramic mug or bowl in a relaxing and supportive environment.",
+    "requirements": "Private class with no experience needed."
+  },
+  "2": {
+    "slug": "pottery-wheel-intermediate",
+    "title": "Pottery Wheel - Intermediate",
+    "description": "Already learnt the basics? Have a go at our intermediate workshop to further improve your skills",
+    "longDescription": "Build confidence with the wheel and develop more advanced throwing techniques in this one-on-one workshop. Refine your centering, shape more complex forms and feel more in control of your future projects.",
+    "requirements": "Private class with basic experience with the wheel recommended."
+  },
+  "3": {
+    "slug": "throw-and-decorate",
+    "title": "Throw and Decorate",
+    "description": "Discover throwing techniques and explore ways to personalise your piece, all in one session",
+    "longDescription": "Go further with your imagination and personalise your piece straight after throwing it. Whether you're a first time potter or have prior experience, this workshop gives you an opportunity to express yourself through one of the following decorative techniques:",
+    "requirements": "Private class with no experience needed.",
+    "longDescriptionList": [
+      "Carving (sgraffito)",
+      "Stamping or creating textures",
+      "Slip decoration",
+      "Underglaze painting"
+    ]
+  },
+  "4": {
+    "slug": "kids-and-parents-ceramic-class",
+    "title": "Kids & Parents Ceramic Class",
+    "description": "Weekly after school ceramics class for both kids and parents",
+    "longDescription": "Let your children's (and your own!) imagination flow at our weekly ceramics class. Perfect for families and for those seeking a weekly activity. Register your interest and let me know which time and day works best for you, and we can try to make it happen!",
+    "requirements": "Join a group session in our beautiful studio in Penela where your teacher will guide you through the basics of handbuilding pottery. No experience needed.",
+    "longDescriptionList": [
+      "All materials provided",
+      "Firing and Glazing"
+    ]
+  },
+  "5": {
+    "slug": "kids-ceramic-class",
+    "title": "Kids Ceramic Class",
+    "description": "Weekly after school ceramics class for kids",
+    "longDescription": "Let your children's imagination flow at our weekly ceramics class. Perfect for those seeking an after school activity for their children. Here they will have the freedom to channel their energy and the guidance necessary to create their own ceramic masterpiece. Register your interest and let me know which time and day works best for you.",
+    "requirements": "Join a group session in our beautiful studio in Penela where your teacher will guide you through the basics of handbuilding pottery. No experience needed."
+  }
+}

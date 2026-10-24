@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop | Solevento Ceramics</title>
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <meta name="description" content="Browse handmade ceramic bowls, mugs, tableware and decorative pottery crafted in our Penela studio. Each piece is individually made with care in Portugal.">
+    <meta name="keywords" content="solevento, portugal, penela, coimbra, ceramics, pottery, handcrafted, handmade, chemical free, glaze, mug, bowl, vase, cup, nature, artisan, clay">
+    <!-- Bootstrap CSS -->
+    <link href="/scripts/bootstrap-5.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/scripts/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<!-- Header & Navigation -->
+<header id="header-banner" class="py-3">
+    <nav class="navbar navbar-expand-md">
+        <div id="brand-name" class="container mx-auto">
+            <!-- Hamburger button for mobile -->
+            <button class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#mobileMenu"
+                    aria-controls="mobileMenu"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Logo -->
+            <div>
+                <a href="/{{lang}}/index.html">
+                    <img src="/images/logo.svg" alt="Logo" style="max-height: 100px;" class="me-3">
+                </a>
+            </div>
+
+            <!-- Collapsible menu -->
+            <div class="collapse navbar-collapse d-none d-md-flex" id="navbarNav">
+                <ul class="nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/{{lang}}/index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="/{{lang}}/shop.html">Shop</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/{{lang}}/workshops.html">Workshops & Classes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/{{lang}}/faqs.html">FAQs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/{{lang}}/about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/{{lang}}/contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu">
+        <div class="offcanvas-header">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+
+        <div class="offcanvas-body">
+            <ul class="nav flex-column">
+                <li class="nav-item"><a class="nav-link" href="/{{lang}}/index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link active" href="/{{lang}}/shop.html">Shop</a></li>
+                <li class="nav-item"><a class="nav-link" href="/{{lang}}/workshops.html">Workshops & Classes</a></li>
+                <li class="nav-item"><a class="nav-link" href="/{{lang}}/faqs.html">FAQs</a></li>
+                <li class="nav-item"><a class="nav-link" href="/{{lang}}/about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="/{{lang}}/contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+<main>
+    <!-- Shop Section -->
+    <section class="py-3">
+        <div class="container">
+            <h3 class="section-heading">
+                <span class="mobile-only">Shop</span>
+            </h3>
+            <div class="product-toolbar d-flex flex-wrap align-items-center gap-3 mb-4">
+                <div class="flex-grow-1">
+                    <input
+                            id="searchProducts"
+                            type="search"
+                            class="form-control"
+                            placeholder="Search products...">
+                </div>
+                <select id="collectionFilter" class="form-select filter-select">
+                    <option value="">All Collections</option>
+                    <option value="Blue Speckled">Blue Speckled</option>
+                    <option value="Chestnut Mountains">Chestnut Mountains</option>
+                    <option value="Egg Shell">Egg Shell</option>
+                    <option value="Fire">Fire</option>
+                    <option value="Forest">Forest</option>
+                    <option value="Home">Home</option>
+                    <option value="Lavender Sunset">Lavender Sunset</option>
+                    <option value="Sgraffito">Sgraffito</option>
+                    <option value="Space">Space</option>
+                </select>
+                <select id="sortProducts" class="form-select filter-select">
+                    <option value="featured">Featured</option>
+                    <option value="name">Name A-Z</option>
+                    <option value="priceAsc">Price: Low → High</option>
+                    <option value="priceDesc">Price: High → Low</option>
+                </select>
+            </div>
+            <div id="productContainer" class="row g-4">
+                <!-- Card -->
+                <div class="col-md-4 product-card" data-name="Forest Sphere Cup"
+                     data-price="20"
+                     data-collection="Forest"
+                     data-material="Stoneware speckled clay"
+                     data-stock="in-stock"
+                     data-keywords="cup mug tumbler coffee tea drink kitchen ceramic handmade forest green gift">
+                    <div class="card h-100 shadow-sm">
+                        <a href="/{{lang}}/products/ForestSeries/SphereCup/ForestSeriesSphereCup.html">
+                            <img src="/images/Products/ForestSeries/SphereCup/ForestSphereCup1.jpeg"
+                                 class="card-img-top product-image" alt="Forest Sphere Cup">
+                        </a>
+                        <div class="card-body">
+                            <p class="product-collection mb-1">Forest</p>
+<h5 class="card-title d-flex justify-content-between align-items-start mb-0"><span class="product-name">Sphere Cup</span><span class="product-price-shop ms-2">€20</span></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 product-card" data-name="Forest Mug"
+                     data-price="25"
+                     data-collection="Forest"
+                     data-material="Stoneware speckled clay"
+                     data-stock="in-stock"
+                     data-keywords="cup mug tumbler coffee tea drink kitchen ceramic handmade forest green gift">
+                    <div class="card h-100 shadow-sm">
+                        <a href="/{{lang}}/products/ForestSeries/Mug/ForestSeriesMug.html">
+                            <img src="/images/Products/ForestSeries/Mug/ForestMug1.jpeg"
+                                 class="card-img-top product-image" alt="Forest Mug">
+                        </a>
+                        <div class="card-body">
+                            <p class="product-collection mb-1">Forest</p>
+<h5 class="card-title d-flex justify-content-between align-items-start mb-0"><span class="product-name">Mug</span><span class="product-price-shop ms-2">€25</span></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 product-card" data-name="Chestnut Mountains Mug"
+                     data-price="25"
+                     data-collection="Chestnut Mountains"
+                     data-material="Toffee stoneware clay"
+                     data-stock="in-stock"
+                     data-keywords="cup mug tumbler coffee tea drink kitchen ceramic handmade chestnut mountains brown gift">
+                    <div class="card h-100 shadow-sm">
+                        <a href="/{{lang}}/products/ChestnutMountainsSeries/Mug/ChestnutMountainsSeriesMug.html">
+                            <img src="/images/Products/ChestnutMountainsSeries/WhiteSkyMug/ChestnutMountainsMug1.JPG"
+                                 class="card-img-top product-image" alt="Chestnut Mountains Mug">
+                        </a>
+                        <div class="card-body">
+                            <p class="product-collection mb-1">Chestnut Mountains</p>
+<h5 class="card-title d-flex justify-content-between align-items-start mb-0"><span class="product-name">Mug</span><span class="product-price-shop ms-2">€25</span></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 product-card" data-name="Chestnut Mountains Mug"
+                     data-price="25"
+                     data-collection="Chestnut Mountains"
+                     data-material="Toffee stoneware clay"
+                     data-stock="out-of-stock"
+                     data-keywords="cup mug tumbler coffee tea drink kitchen ceramic handmade chestnut mountains brown gift">
+                    <div class="card h-100 shadow-sm">
+                        <a href="/{{lang}}/products/ChestnutMountainsSeries/BrownSkyMug/ChestnutMountainsSeriesBrownSkyMug.html">
+                            <img src="/images/Products/ChestnutMountainsSeries/BrownSkyMug/ChestnutMountainsMug1.JPG"
+                                 class="card-img-top product-image" alt="Chestnut Mountains Mug">
+                        </a>
+                        <div class="card-body">
+                            <p class="product-collection mb-1">Chestnut Mountains</p>
+<h5 class="card-title d-flex justify-content-between align-items-start mb-0"><span class="product-name">Mug</span><span class="product-price-shop ms-2">€25</span></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 product-card" data-name="Space Mug"
+                     data-price="25"
+                     data-collection="Space"
+                     data-material="Stoneware speckled clay"
+                     data-stock="in-stock"
+                     data-keywords="cup mug tumbler coffee tea drink kitchen ceramic handmade space blue gift">
+                    <div class="card h-100 shadow-sm">
+                        <a href="/{{lang}}/products/SpaceSeries/Mug/SpaceSeriesMug.html">
+                            <img src="/images/Products/SpaceSeries/Mug/Mug1.JPG"
+                                 class="card-img-top product-image" alt="Space Mug">
+                        </a>
+                        <div class="card-body">
+                            <p class="product-collection mb-1">Space</p>
+<h5 class="card-title d-flex justify-content-between align-items-start mb-0"><span class="product-name">Mug</span><span class="product-price-shop ms-2">€25</span></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 product-card" data-name="Fire Mug"
+                     data-price="25"
+                     data-collection="Fire"
+                     data-material="Stoneware speckled clay"
+                     data-stock="in-stock"
+                     data-keywords="cup mug tumbler coffee tea drink kitchen ceramic handmade fire fire gift">
+                    <div class="card h-100 shadow-sm">
+                        <a href="/{{lang}}/products/FireSeries/Mug/FireSeriesMug.html">
+                            <img src="/images/Products/FireSeries/Mug/Mug1.JPG"
+                                 class="card-img-top product-image" alt="Fire Mug">
+                        </a>
+                        <div class="card-body">
+                            <p class="product-collection mb-1">Fire</p>
+<h5 class="card-title d-flex justify-content-between align-items-start mb-0"><span class="product-name">Mug</span><span class="product-price-shop ms-2">€25</span></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 product-card" data-name="Sgraffito Sgraffito Mug 1"
+                     data-price="25"
+                     data-collection="Sgraffito"
+                     data-material="Stoneware speckled clay"
+                     data-stock="in-stock"
+                     data-keywords="cup sgraffito mug tumbler coffee tea drink kitchen ceramic handmade pattern pattern gift">
+                    <div class="card h-100 shadow-sm">
+                        <a href="/{{lang}}/products/SgraffitoSeries/SgraffitoMug1/SgraffitoSeriesSgraffitoMug1.html">
+                            <img src="/images/Products/SgraffitoSeries/SgraffitoMug1/Mug1.JPG"
+                                 class="card-img-top product-image" alt="Sgraffito Sgraffito Mug 1">
+                        </a>
+                        <div class="card-body">
+                            <p class="product-collection mb-1">Sgraffito</p>
+<h5 class="card-title d-flex justify-content-between align-items-start mb-0"><span class="product-name">Sgraffito Mug 1</span><span class="product-price-shop ms-2">€25</span></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 product-card" data-name="Sgraffito Sgraffito Tumbler 1"
+                     data-price="25"
+                     data-collection="Sgraffito"
+                     data-material="Stoneware speckled clay"
+                     data-stock="in-stock"
+                     data-keywords="cup sgraffito mug tumbler coffee tea drink kitchen ceramic handmade pattern pattern gift">
+                    <div class="card h-100 shadow-sm">
+                        <a href="/{{lang}}/products/SgraffitoSeries/SgraffitoTumbler1/SgraffitoSeriesSgraffitoTumbler1.html">
+                            <img src="/images/Products/SgraffitoSeries/SgraffitoTumbler1/Mug1.JPG"
+                                 class="card-img-top product-image" alt="Sgraffito Sgraffito Tumbler 1">
+                        </a>
+                        <div class="card-body">
+                            <p class="product-collection mb-1">Sgraffito</p>
+<h5 class="card-title d-flex justify-content-between align-items-start mb-0"><span class="product-name">Sgraffito Tumbler 1</span><span class="product-price-shop ms-2">€25</span></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 product-card" data-name="Sgraffito Sgraffito Tumbler 2"
+                     data-price="25"
+                     data-collection="Sgraffito"
+                     data-material="Stoneware speckled clay"
+                     data-stock="in-stock"
+                     data-keywords="cup sgraffito mug tumbler coffee tea drink kitchen ceramic handmade pattern pattern gift">
+                    <div class="card h-100 shadow-sm">
+                        <a href="/{{lang}}/products/SgraffitoSeries/SgraffitoTumbler2/SgraffitoSeriesSgraffitoTumbler2.html">
+                            <img src="/images/Products/SgraffitoSeries/SgraffitoTumbler2/Tumbler1.JPG"
+                                 class="card-img-top product-image" alt="Sgraffito Sgraffito Tumbler 2">
+                        </a>
+                        <div class="card-body">
+                            <p class="product-collection mb-1">Sgraffito</p>
+<h5 class="card-title d-flex justify-content-between align-items-start mb-0"><span class="product-name">Sgraffito Tumbler 2</span><span class="product-price-shop ms-2">€25</span></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 product-card" data-name="Sgraffito Sgraffito Tumbler 3"
+                     data-price="25"
+                     data-collection="Sgraffito"
+                     data-material="Stoneware speckled clay"
+                     data-stock="in-stock"
+                     data-keywords="cup sgraffito mug tumbler coffee tea drink kitchen ceramic handmade pattern pattern gift">
+                    <div class="card h-100 shadow-sm">
+                        <a href="/{{lang}}/products/SgraffitoSeries/SgraffitoTumbler3/SgraffitoSeriesSgraffitoTumbler3.html">
+                            <img src="/images/Products/SgraffitoSeries/SgraffitoTumbler3/Tumbler1.JPG"
+                                 class="card-img-top product-image" alt="Sgraffito Sgraffito Tumbler 3">
+                        </a>
+                        <div class="card-body">
+                            <p class="product-collection mb-1">Sgraffito</p>
+<h5 class="card-title d-flex justify-content-between align-items-start mb-0"><span class="product-name">Sgraffito Tumbler 3</span><span class="product-price-shop ms-2">€25</span></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 product-card" data-name="Sgraffito Sgraffito Tumbler 4"
+                     data-price="25"
+                     data-collection="Sgraffito"
+                     data-material="Stoneware speckled clay"
+                     data-stock="in-stock"
+                     data-keywords="cup sgraffito mug tumbler coffee tea drink kitchen ceramic handmade pattern pattern gift">
+                    <div class="card h-100 shadow-sm">
+                        <a href="/{{lang}}/products/SgraffitoSeries/SgraffitoTumbler4/SgraffitoSeriesSgraffitoTumbler4.html">
+                            <img src="/images/Products/SgraffitoSeries/SgraffitoTumbler4/Tumbler1.JPG"
+                                 class="card-img-top product-image" alt="Sgraffito Sgraffito Tumbler 4">
+                        </a>
+                        <div class="card-body">
+                            <p class="product-collection mb-1">Sgraffito</p>
+<h5 class="card-title d-flex justify-content-between align-items-start mb-0"><span class="product-name">Sgraffito Tumbler 4</span><span class="product-price-shop ms-2">€25</span></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 product-card" data-name="Sgraffito Sgraffito Tumbler 5"
+                     data-price="25"
+                     data-collection="Sgraffito"
+                     data-material="Stoneware speckled clay"
+                     data-stock="in-stock"
+                     data-keywords="cup sgraffito mug tumbler coffee tea drink kitchen ceramic handmade pattern pattern gift">
+                    <div class="card h-100 shadow-sm">
+                        <a href="/{{lang}}/products/SgraffitoSeries/SgraffitoTumbler5/SgraffitoSeriesSgraffitoTumbler5.html">
+                            <img src="/images/Products/SgraffitoSeries/SgraffitoTumbler5/Tumbler1.JPG"
+                                 class="card-img-top product-image" alt="Sgraffito Sgraffito Tumbler 5">
+                        </a>
+                        <div class="card-body">
+                            <p class="product-collection mb-1">Sgraffito</p>
+<h5 class="card-title d-flex justify-content-between align-items-start mb-0"><span class="product-name">Sgraffito Tumbler 5</span><span class="product-price-shop ms-2">€25</span></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 product-card" data-name="Sgraffito Sgraffito Tumbler 6"
+                     data-price="25"
+                     data-collection="Sgraffito"
+                     data-material="Stoneware speckled clay"
+                     data-stock="in-stock"
+                     data-keywords="cup sgraffito mug tumbler coffee tea drink kitchen ceramic handmade pattern pattern gift">
+                    <div class="card h-100 shadow-sm">
+                        <a href="/{{lang}}/products/SgraffitoSeries/SgraffitoTumbler6/SgraffitoSeriesSgraffitoTumbler6.html">
+                            <img src="/images/Products/SgraffitoSeries/SgraffitoTumbler6/Tumbler1.JPG"
+                                 class="card-img-top product-image" alt="Sgraffito Sgraffito Tumbler 6">
+                        </a>
+                        <div class="card-body">
+                            <p class="product-collection mb-1">Sgraffito</p>
+<h5 class="card-title d-flex justify-content-between align-items-start mb-0"><span class="product-name">Sgraffito Tumbler 6</span><span class="product-price-shop ms-2">€25</span></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 product-card" data-name="Sgraffito Sgraffito Tumbler 7"
+                     data-price="25"
+                     data-collection="Sgraffito"
+                     data-material="Stoneware speckled clay"
+                     data-stock="in-stock"
+                     data-keywords="cup sgraffito mug tumbler coffee tea drink kitchen ceramic handmade pattern pattern gift">
+                    <div class="card h-100 shadow-sm">
+                        <a href="/{{lang}}/products/SgraffitoSeries/SgraffitoTumbler7/SgraffitoSeriesSgraffitoTumbler7.html">
+                            <img src="/images/Products/SgraffitoSeries/SgraffitoTumbler7/Tumbler1.JPG"
+                                 class="card-img-top product-image" alt="Sgraffito Sgraffito Tumbler 7">
+                        </a>
+                        <div class="card-body">
+                            <p class="product-collection mb-1">Sgraffito</p>
+<h5 class="card-title d-flex justify-content-between align-items-start mb-0"><span class="product-name">Sgraffito Tumbler 7</span><span class="product-price-shop ms-2">€25</span></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 product-card" data-name="Sgraffito Sgraffito Tumbler 8"
+                     data-price="25"
+                     data-collection="Sgraffito"
+                     data-material="Stoneware speckled clay"
+                     data-stock="in-stock"
+                     data-keywords="cup sgraffito mug tumbler coffee tea drink kitchen ceramic handmade pattern pattern gift">
+                    <div class="card h-100 shadow-sm">
+                        <a href="/{{lang}}/products/SgraffitoSeries/SgraffitoTumbler8/SgraffitoSeriesSgraffitoTumbler8.html">
+                            <img src="/images/Products/SgraffitoSeries/SgraffitoTumbler8/Tumbler1.JPG"
+                                 class="card-img-top product-image" alt="Sgraffito Sgraffito Tumbler 8">
+                        </a>
+                        <div class="card-body">
+                            <p class="product-collection mb-1">Sgraffito</p>
+<h5 class="card-title d-flex justify-content-between align-items-start mb-0"><span class="product-name">Sgraffito Tumbler 8</span><span class="product-price-shop ms-2">€25</span></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 product-card" data-name="Chestnut Mountains Small Travel Mug"
+                     data-price="22"
+                     data-collection="Chestnut Mountains"
+                     data-material="Stoneware speckled clay"
+                     data-stock="in-stock"
+                     data-keywords="cup travel mug tumbler coffee tea drink kitchen ceramic handmade chestnut mountains brown gift">
+                    <div class="card h-100 shadow-sm">
+                        <a href="/{{lang}}/products/ChestnutMountainsSeries/TravelMug/ChestnutMountainsSeriesTravelMug.html">
+                            <img src="/images/Products/ChestnutMountainsSeries/TravelMug/ChestnutMountainsTravelMug1.JPG"
+                                 class="card-img-top product-image" alt="Chestnut Mountains Small Travel Mug">
+                        </a>
+                        <div class="card-body">
+                            <p class="product-collection mb-1">Chestnut Mountains</p>
+<h5 class="card-title d-flex justify-content-between align-items-start mb-0"><span class="product-name">Small Travel Mug</span><span class="product-price-shop ms-2">€22</span></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 product-card" data-name="Forest Tumbler"
+                     data-price="20"
+                     data-collection="Forest"
+                     data-material="Stoneware speckled clay"
+                     data-stock="in-stock"
+                     data-keywords="cup mug tumbler coffee tea drink kitchen ceramic handmade forest green gift">
+                    <div class="card h-100 shadow-sm">
+                        <a href="/{{lang}}/products/ForestSeries/Tumbler/ForestSeriesTumbler.html">
+                            <img src="/images/Products/ForestSeries/Tumbler/ForestTumbler1.jpeg"
+                                 class="card-img-top product-image" alt="Forest Tumbler">
+                        </a>
+                        <div class="card-body">
+                            <p class="product-collection mb-1">Forest</p>
+<h5 class="card-title d-flex justify-content-between align-items-start mb-0"><span class="product-name">Tumbler</span><span class="product-price-shop ms-2">€20</span></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 product-card" data-name="Chestnut Mountains Tumbler"
+                     data-price="20"
+                     data-collection="Chestnut Mountains"
+                     data-material="White stoneware clay"
+                     data-stock="in-stock"
+                     data-keywords="cup mug tumbler coffee tea drink kitchen ceramic handmade chestnut mountains brown gift">
+                    <div class="card h-100 shadow-sm">
+                        <a href="/{{lang}}/products/ChestnutMountainsSeries/Tumbler/ChestnutMountainsSeriesTumbler.html">
+                            <img src="/images/Products/ChestnutMountainsSeries/Tumbler/ChestnutMountainsTumbler1.JPG"
+                                 class="card-img-top product-image" alt="Chestnut Mountains Tumbler">
+                        </a>
+                        <div class="card-body">
+                            <p class="product-collection mb-1">Chestnut Mountains</p>
+<h5 class="card-title d-flex justify-content-between align-items-start mb-0"><span class="product-name">Tumbler</span><span class="product-price-shop ms-2">€20</span></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 product-card" data-name="Fire Sphere Cup"
+                     data-price="20"
+                     data-collection="Fire"
+                     data-material="Stoneware speckled clay"
+                     data-stock="in-stock"
+                     data-keywords="cup mug sphere cup coffee tea drink kitchen ceramic handmade fire fire gift">
+                    <div class="card h-100 shadow-sm">
+                        <a href="/{{lang}}/products/FireSeries/SphereCup/FireSeriesSphereCup.html">
+                            <img src="/images/Products/FireSeries/SphereCup/SphereCup1.JPG"
+                                 class="card-img-top product-image" alt="Fire Sphere Cup">
+                        </a>
+                        <div class="card-body">
+                            <p class="product-collection mb-1">Fire</p>
+<h5 class="card-title d-flex justify-content-between align-items-start mb-0"><span class="product-name">Sphere Cup</span><span class="product-price-shop ms-2">€20</span></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 product-card" data-name="Egg Shell Sphere Cup"
+                     data-price="20"
+                     data-collection="Egg Shell"
+                     data-material="Stoneware speckled clay"
+                     data-stock="in-stock"
+                     data-keywords="cup mug sphere cup coffee tea drink kitchen ceramic handmade egg shell egg shell gift">
+                    <div class="card h-100 shadow-sm">
+                        <a href="/{{lang}}/products/EggShellSeries/SphereCup/EggShellSeriesSphereCup.html">
+                            <img src="/images/Products/EggShellSeries/SphereCup/SphereCup1.JPG"
+                                 class="card-img-top product-image" alt="Egg Shell Sphere Cup">
+                        </a>
+                        <div class="card-body">
+                            <p class="product-collection mb-1">Egg Shell</p>
+<h5 class="card-title d-flex justify-content-between align-items-start mb-0"><span class="product-name">Sphere Cup</span><span class="product-price-shop ms-2">€20</span></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 product-card" data-name="Space Tumbler"
+                     data-price="20"
+                     data-collection="Space"
+                     data-material="Stoneware speckled clay"
+                     data-stock="in-stock"
+                     data-keywords="cup mug tumbler coffee tea drink kitchen ceramic handmade space blue gift">
+                    <div class="card h-100 shadow-sm">
+                        <a href="/{{lang}}/products/SpaceBlueSeries/Tumbler/SpaceBlueSeriesTumbler.html">
+                            <img src="/images/Products/SpaceSeries/Tumbler/Tumbler1.JPG"
+                                 class="card-img-top product-image" alt="Space Tumbler">
+                        </a>
+                        <div class="card-body">
+                            <p class="product-collection mb-1">Space</p>
+<h5 class="card-title d-flex justify-content-between align-items-start mb-0"><span class="product-name">Tumbler</span><span class="product-price-shop ms-2">€20</span></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 product-card" data-name="Chestnut Mountains Tall Tumbler"
+                     data-price="22"
+                     data-collection="Chestnut Mountains"
+                     data-material="White stoneware clay"
+                     data-stock="out-of-stock"
+                     data-keywords="cup mug tall tumbler coffee tea drink kitchen ceramic handmade chestnut mountains brown gift">
+                    <div class="card h-100 shadow-sm">
+                        <a href="/{{lang}}/products/ChestnutMountainsSeries/TallTumbler/ChestnutMountainsSeriesTallTumbler.html">
+                            <img src="/images/Products/ChestnutMountainsSeries/TallTumbler/Tumbler1.JPG"
+                                 class="card-img-top product-image" alt="Chestnut Mountains Tall Tumbler">
+                        </a>
+                        <div class="card-body">
+                            <p class="product-collection mb-1">Chestnut Mountains</p>
+<h5 class="card-title d-flex justify-content-between align-items-start mb-0"><span class="product-name">Tall Tumbler</span><span class="product-price-shop ms-2">€22</span></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 product-card" data-name="Lavender Sunset Tumbler"
+                     data-price="20"
+                     data-collection="Lavender Sunset"
+                     data-material="Stoneware speckled clay"
+                     data-stock="in-stock"
+                     data-keywords="cup mug tumbler coffee tea drink kitchen ceramic handmade lavender sunset purple gift">
+                    <div class="card h-100 shadow-sm">
+                        <a href="/{{lang}}/products/LavenderSunsetSeries/Tumbler/LavenderSunsetSeriesTumbler.html">
+                            <img src="/images/Products/LavenderSunsetSeries/Tumbler/Tumbler1.JPG"
+                                 class="card-img-top product-image" alt="Lavender Sunset Tumbler">
+                        </a>
+                        <div class="card-body">
+                            <p class="product-collection mb-1">Lavender Sunset</p>
+<h5 class="card-title d-flex justify-content-between align-items-start mb-0"><span class="product-name">Tumbler</span><span class="product-price-shop ms-2">€20</span></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 product-card" data-name="Home Tumbler"
+                     data-price="20"
+                     data-collection="Home"
+                     data-material="Stoneware speckled clay"
+                     data-stock="in-stock"
+                     data-keywords="cup mug tumbler coffee tea drink kitchen ceramic handmade home gift">
+                    <div class="card h-100 shadow-sm">
+                        <a href="/{{lang}}/products/HomeSeries/Tumbler/HomeSeriesTumbler.html">
+                            <img src="/images/Products/HomeSeries/Tumbler/Tumbler1.JPG"
+                                 class="card-img-top product-image" alt="Home Tumbler">
+                        </a>
+                        <div class="card-body">
+                            <p class="product-collection mb-1">Home</p>
+<h5 class="card-title d-flex justify-content-between align-items-start mb-0"><span class="product-name">Tumbler</span><span class="product-price-shop ms-2">€20</span></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 product-card" data-name="Home Cup and Plate"
+                     data-price="20"
+                     data-collection="Home"
+                     data-material="Stoneware speckled clay"
+                     data-stock="in-stock"
+                     data-keywords="cup mug cup plate coffee tea drink kitchen ceramic handmade home gift">
+                    <div class="card h-100 shadow-sm">
+                        <a href="/{{lang}}/products/HomeSeries/CupWithPlate/HomeSeriesCupWithPlate.html">
+                            <img src="/images/Products/HomeSeries/CupWithPlate/Cup1.JPG"
+                                 class="card-img-top product-image" alt="Home Cup and Plate">
+                        </a>
+                        <div class="card-body">
+                            <p class="product-collection mb-1">Home</p>
+<h5 class="card-title d-flex justify-content-between align-items-start mb-0"><span class="product-name">Cup and Plate</span><span class="product-price-shop ms-2">€20</span></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 product-card" data-name="Home Butter Bell"
+                     data-price="20"
+                     data-collection="Home"
+                     data-material="Stoneware speckled clay"
+                     data-stock="in-stock"
+                     data-keywords="cup mug butter bell butter dish coffee tea drink kitchen ceramic handmade home gift">
+                    <div class="card h-100 shadow-sm">
+                        <a href="/{{lang}}/products/HomeSeries/ButterBell/HomeSeriesButterBell.html">
+                            <img src="/images/Products/HomeSeries/ButterBell/ButterBell1.JPG"
+                                 class="card-img-top product-image" alt="Home Butter Bell">
+                        </a>
+                        <div class="card-body">
+                            <p class="product-collection mb-1">Home</p>
+<h5 class="card-title d-flex justify-content-between align-items-start mb-0"><span class="product-name">Butter Bell</span><span class="product-price-shop ms-2">€20</span></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 product-card" data-name="Home Large Bowl"
+                     data-price="25"
+                     data-collection="Home"
+                     data-material="Stoneware speckled clay"
+                     data-stock="in-stock"
+                     data-keywords="cup mug large bowl serving coffee tea drink kitchen ceramic handmade home gift">
+                    <div class="card h-100 shadow-sm">
+                        <a href="/{{lang}}/products/HomeSeries/LargeBowl/HomeSeriesLargeBowl.html">
+                            <img src="/images/Products/HomeSeries/LargeBowl/Bowl1.JPG"
+                                 class="card-img-top product-image" alt="Home Large Bowl">
+                        </a>
+                        <div class="card-body">
+                            <p class="product-collection mb-1">Home</p>
+<h5 class="card-title d-flex justify-content-between align-items-start mb-0"><span class="product-name">Large Bowl</span><span class="product-price-shop ms-2">€25</span></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 product-card" data-name="Home Wide Bowl"
+                     data-price="25"
+                     data-collection="Home"
+                     data-material="Stoneware speckled clay"
+                     data-stock="in-stock"
+                     data-keywords="cup mug wide bowl serving coffee tea drink kitchen ceramic handmade home gift">
+                    <div class="card h-100 shadow-sm">
+                        <a href="/{{lang}}/products/HomeSeries/WideBowl/HomeSeriesWideBowl.html">
+                            <img src="/images/Products/HomeSeries/WideBowl/Bowl1.JPG"
+                                 class="card-img-top product-image" alt="Home Wide Bowl">
+                        </a>
+                        <div class="card-body">
+                            <p class="product-collection mb-1">Home</p>
+<h5 class="card-title d-flex justify-content-between align-items-start mb-0"><span class="product-name">Wide Bowl</span><span class="product-price-shop ms-2">€25</span></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 product-card" data-name="Forest Bowl"
+                     data-price="25"
+                     data-collection="Forest"
+                     data-material="Stoneware speckled clay"
+                     data-stock="in-stock"
+                     data-keywords="bowl breakfast kitchen ceramic handmade forest green gift">
+                    <div class="card h-100 shadow-sm">
+                        <a href="/{{lang}}/products/ForestSeries/Bowl/ForestSeriesBowl.html">
+                            <img src="/images/Products/ForestSeries/Bowl/ForestBowl1.jpeg"
+                                 class="card-img-top product-image" alt="Forest Bowl">
+                        </a>
+                        <div class="card-body">
+                            <p class="product-collection mb-1">Forest</p>
+<h5 class="card-title d-flex justify-content-between align-items-start mb-0"><span class="product-name">Bowl</span><span class="product-price-shop ms-2">€25</span></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 product-card" data-name="Space Bowl"
+                     data-price="25"
+                     data-collection="Space"
+                     data-material="Stoneware speckled clay"
+                     data-stock="in-stock"
+                     data-keywords="bowl breakfast kitchen ceramic handmade space blue gift">
+                    <div class="card h-100 shadow-sm">
+                        <a href="/{{lang}}/products/SpaceBlueSeries/Bowl/SpaceBlueSeriesBowl.html">
+                            <img src="/images/Products/SpaceSeries/Bowl/Bowl1.JPG"
+                                 class="card-img-top product-image" alt="Space Bowl">
+                        </a>
+                        <div class="card-body">
+                            <p class="product-collection mb-1">Space</p>
+<h5 class="card-title d-flex justify-content-between align-items-start mb-0"><span class="product-name">Bowl</span><span class="product-price-shop ms-2">€25</span></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 product-card" data-name="Egg Shell Bowl"
+                     data-price="25"
+                     data-collection="Egg Shell"
+                     data-material="Stoneware speckled clay"
+                     data-stock="in-stock"
+                     data-keywords="bowl breakfast kitchen ceramic handmade egg shell green gift">
+                    <div class="card h-100 shadow-sm">
+                        <a href="/{{lang}}/products/EggShellSeries/Bowl/EggShellSeriesBowl.html">
+                            <img src="/images/Products/EggShellSeries/Bowl/Bowl1.JPG"
+                                 class="card-img-top product-image" alt="Egg Shell Bowl">
+                        </a>
+                        <div class="card-body">
+                            <p class="product-collection mb-1">Egg Shell</p>
+<h5 class="card-title d-flex justify-content-between align-items-start mb-0"><span class="product-name">Bowl</span><span class="product-price-shop ms-2">€25</span></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 product-card" data-name="Sgraffito Striped Bowl"
+                     data-price="25"
+                     data-collection="Sgraffito"
+                     data-material="Stoneware speckled clay"
+                     data-stock="in-stock"
+                     data-keywords="striped bowl breakfast kitchen ceramic handmade pattern gift">
+                    <div class="card h-100 shadow-sm">
+                        <a href="/{{lang}}/products/SgraffitoSeries/StripedBowl/SgraffitoSeriesStripedBowl.html">
+                            <img src="/images/Products/SgraffitoSeries/StripedBowl/Bowl1.JPG"
+                                 class="card-img-top product-image" alt="Sgraffito Striped Bowl">
+                        </a>
+                        <div class="card-body">
+                            <p class="product-collection mb-1">Sgraffito</p>
+<h5 class="card-title d-flex justify-content-between align-items-start mb-0"><span class="product-name">Striped Bowl</span><span class="product-price-shop ms-2">€25</span></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 product-card" data-name="Sgraffito Sgraffito Vase 1"
+                     data-price="25"
+                     data-collection="Sgraffito"
+                     data-material="Stoneware speckled clay"
+                     data-stock="in-stock"
+                     data-keywords="vase flowers decor ceramic handmade pattern gift jarra flores decoração cerâmica artesanal padrão presente">
+                    <div class="card h-100 shadow-sm">
+                        <a href="/{{lang}}/products/SgraffitoSeries/SgraffitoVase1/SgraffitoSeriesSgraffitoVase1.html">
+                            <img src="/images/Products/SgraffitoSeries/SgraffitoVase1/Vase1.JPG"
+                                 class="card-img-top product-image" alt="Sgraffito Sgraffito Vase 1">
+                        </a>
+                        <div class="card-body">
+                            <p class="product-collection mb-1">Sgraffito</p>
+<h5 class="card-title d-flex justify-content-between align-items-start mb-0"><span class="product-name">Sgraffito Vase 1</span><span class="product-price-shop ms-2">€25</span></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 product-card" data-name="Sgraffito Sgraffito Vase 2"
+                     data-price="25"
+                     data-collection="Sgraffito"
+                     data-material="Stoneware speckled clay"
+                     data-stock="in-stock"
+                     data-keywords="vase flowers decor ceramic handmade pattern gift jarra flores decoração cerâmica artesanal padrão presente">
+                    <div class="card h-100 shadow-sm">
+                        <a href="/{{lang}}/products/SgraffitoSeries/SgraffitoVase2/SgraffitoSeriesSgraffitoVase2.html">
+                            <img src="/images/Products/SgraffitoSeries/SgraffitoVase2/Vase1.JPG"
+                                 class="card-img-top product-image" alt="Sgraffito Sgraffito Vase 2">
+                        </a>
+                        <div class="card-body">
+                            <p class="product-collection mb-1">Sgraffito</p>
+<h5 class="card-title d-flex justify-content-between align-items-start mb-0"><span class="product-name">Sgraffito Vase 2</span><span class="product-price-shop ms-2">€25</span></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 product-card" data-name="Sgraffito Striped Vase"
+                     data-price="25"
+                     data-collection="Sgraffito"
+                     data-material="Stoneware speckled clay"
+                     data-stock="in-stock"
+                     data-keywords="striped vase flowers decor ceramic handmade pattern gift jarra flores decoração cerâmica artesanal padrão presente">
+                    <div class="card h-100 shadow-sm">
+                        <a href="/{{lang}}/products/SgraffitoSeries/StripedVase/SgraffitoSeriesStripedVase.html">
+                            <img src="/images/Products/SgraffitoSeries/StripedVase/Vase1.JPG"
+                                 class="card-img-top product-image" alt="Sgraffito Striped Vase">
+                        </a>
+                        <div class="card-body">
+                            <p class="product-collection mb-1">Sgraffito</p>
+<h5 class="card-title d-flex justify-content-between align-items-start mb-0"><span class="product-name">Striped Vase</span><span class="product-price-shop ms-2">€25</span></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 product-card" data-name="Blue Speckled Bowl"
+                     data-price="25"
+                     data-collection="Blue Speckled"
+                     data-material="Stoneware speckled clay"
+                     data-stock="in-stock"
+                     data-keywords="bowl breakfast kitchen ceramic handmade blue speckled gift">
+                    <div class="card h-100 shadow-sm">
+                        <a href="/{{lang}}/products/BlueSpeckledSeries/Bowl/BlueSpeckledSeriesBowl.html">
+                            <img src="/images/Products/BlueSpeckledSeries/Bowl/Bowl1.JPG"
+                                 class="card-img-top product-image" alt="Blue Speckled Bowl">
+                        </a>
+                        <div class="card-body">
+                            <p class="product-collection mb-1">Blue Speckled</p>
+<h5 class="card-title d-flex justify-content-between align-items-start mb-0"><span class="product-name">Bowl</span><span class="product-price-shop ms-2">€25</span></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 product-card" data-name="Blue Speckled Set of Tea Cups"
+                     data-price="25"
+                     data-collection="Blue Speckled"
+                     data-material="Stoneware speckled clay"
+                     data-stock="in-stock"
+                     data-keywords="tea cups Gongfu kitchen ceramic handmade blue speckled gift">
+                    <div class="card h-100 shadow-sm">
+                        <a href="/{{lang}}/products/BlueSpeckledSeries/SetOfTeaCups/BlueSpeckledSeriesSetOfTeaCups.html">
+                            <img src="/images/Products/BlueSpeckledSeries/SetOfTeaCups/TeaCup1.JPG"
+                                 class="card-img-top product-image" alt="Blue Speckled Set of Tea Cups">
+                        </a>
+                        <div class="card-body">
+                            <p class="product-collection mb-1">Blue Speckled</p>
+<h5 class="card-title d-flex justify-content-between align-items-start mb-0"><span class="product-name">Set of Tea Cups</span><span class="product-price-shop ms-2">€25</span></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 product-card" data-name="Sgraffito Set of Bowls"
+                     data-price="25"
+                     data-collection="Sgraffito"
+                     data-material="Stoneware speckled clay"
+                     data-stock="in-stock"
+                     data-keywords="bowl breakfast kitchen ceramic handmade pattern gift">
+                    <div class="card h-100 shadow-sm">
+                        <a href="/{{lang}}/products/SgraffitoSeries/SetOfBowls/SgraffitoSeriesSetOfBowls.html">
+                            <img src="/images/Products/SgraffitoSeries/SetOfBowls/Bowl1.JPG"
+                                 class="card-img-top product-image" alt="Sgraffito Set of Bowls">
+                        </a>
+                        <div class="card-body">
+                            <p class="product-collection mb-1">Sgraffito</p>
+<h5 class="card-title d-flex justify-content-between align-items-start mb-0"><span class="product-name">Set of Bowls</span><span class="product-price-shop ms-2">€25</span></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 product-card" data-name="Blue Speckled Gaiwan"
+                     data-price="25"
+                     data-collection="Blue Speckled"
+                     data-material="Speckled white stoneware clay"
+                     data-stock="in-stock"
+                     data-keywords="gaiwan Gongfu tea blue speckled handmade chá azul salpicado artesanal">
+                    <div class="card h-100 shadow-sm">
+                        <a href="/{{lang}}/products/BlueSpeckledSeries/Gaiwan/BlueSpeckledSeriesGaiwan.html">
+                            <img src="/images/Products/BlueSpeckledSeries/Gaiwan/Gaiwan1.jpeg"
+                                 class="card-img-top product-image" alt="Blue Speckled Gaiwan">
+                        </a>
+                        <div class="card-body">
+                            <p class="product-collection mb-1">Blue Speckled</p>
+<h5 class="card-title d-flex justify-content-between align-items-start mb-0"><span class="product-name">Gaiwan</span><span class="product-price-shop ms-2">€25</span></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 product-card" data-name="Blue Speckled Tea Cup with Accent"
+                     data-price="15"
+                     data-collection="Blue Speckled"
+                     data-material="Speckled white stoneware clay"
+                     data-stock="in-stock"
+                     data-keywords="tea cup Gongfu blue yellow stoneware handmade chá chávena azul amarelo grés artesanal">
+                    <div class="card h-100 shadow-sm">
+                        <a href="/{{lang}}/products/BlueSpeckledSeries/TeaCupWithAccent/BlueSpeckledSeriesTeaCupWithAccent.html">
+                            <img src="/images/Products/BlueSpeckledSeries/TeaCupWithAccent/TeaCupWithAccent1.jpeg"
+                                 class="card-img-top product-image" alt="Blue Speckled Tea Cup with Accent">
+                        </a>
+                        <div class="card-body">
+                            <p class="product-collection mb-1">Blue Speckled</p>
+<h5 class="card-title d-flex justify-content-between align-items-start mb-0"><span class="product-name">Tea Cup with Accent</span><span class="product-price-shop ms-2">€15</span></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 product-card" data-name="Blue Speckled Tea Cup"
+                     data-price="12"
+                     data-collection="Blue Speckled"
+                     data-material="Speckled white stoneware clay"
+                     data-stock="in-stock"
+                     data-keywords="tea cup Gongfu blue stoneware handmade chá chávena azul grés artesanal">
+                    <div class="card h-100 shadow-sm">
+                        <a href="/{{lang}}/products/BlueSpeckledSeries/TeaCup/BlueSpeckledSeriesTeaCup.html">
+                            <img src="/images/Products/BlueSpeckledSeries/TeaCup/TeaCup1.jpeg"
+                                 class="card-img-top product-image" alt="Blue Speckled Tea Cup">
+                        </a>
+                        <div class="card-body">
+                            <p class="product-collection mb-1">Blue Speckled</p>
+<h5 class="card-title d-flex justify-content-between align-items-start mb-0"><span class="product-name">Tea Cup</span><span class="product-price-shop ms-2">€12</span></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 product-card" data-name="Chestnut Mountains Dessert Bowl"
+                     data-price="20"
+                     data-collection="Chestnut Mountains"
+                     data-material="White stoneware clay"
+                     data-stock="in-stock"
+                     data-keywords="dessert bowl chestnut mountains sobremesa taça handmade artesanal">
+                    <div class="card h-100 shadow-sm">
+                        <a href="/{{lang}}/products/ChestnutMountainsSeries/DessertBowl/ChestnutMountainsSeriesDessertBowl.html">
+                            <img src="/images/Products/ChestnutMountainsSeries/DessertBowl/DessertBowl1.jpeg"
+                                 class="card-img-top product-image" alt="Chestnut Mountains Dessert Bowl">
+                        </a>
+                        <div class="card-body">
+                            <p class="product-collection mb-1">Chestnut Mountains</p>
+<h5 class="card-title d-flex justify-content-between align-items-start mb-0"><span class="product-name">Dessert Bowl</span><span class="product-price-shop ms-2">€20</span></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 product-card" data-name="Blue Speckled Plate Grater"
+                     data-price="25"
+                     data-collection="Blue Speckled"
+                     data-material="Stoneware speckled clay"
+                     data-stock="in-stock"
+                     data-keywords="plate grater garlic ginger kitchen ceramic handmade blue speckled gift">
+                    <div class="card h-100 shadow-sm">
+                        <a href="/{{lang}}/products/BlueSpeckledSeries/PlateGrater/BlueSpeckledSeriesPlateGrater.html">
+                            <img src="/images/Products/BlueSpeckledSeries/PlateGrater/PlateGrater1.JPG"
+                                 class="card-img-top product-image" alt="Blue Speckled Plate Grater">
+                        </a>
+                        <div class="card-body">
+                            <p class="product-collection mb-1">Blue Speckled</p>
+<h5 class="card-title d-flex justify-content-between align-items-start mb-0"><span class="product-name">Plate Grater</span><span class="product-price-shop ms-2">€25</span></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 product-card" data-name="Forest Pouring Jug"
+                     data-price="15"
+                     data-collection="Forest"
+                     data-material="Stoneware speckled clay"
+                     data-stock="in-stock"
+                     data-keywords="pouring jug sauce milk kitchen ceramic handmade forest green gift">
+                    <div class="card h-100 shadow-sm">
+                        <a href="/{{lang}}/products/ForestSeries/PouringJug/ForestSeriesPouringJug.html">
+                            <img src="/images/Products/ForestSeries/PouringJug/ForestPouringJug1.jpeg"
+                                 class="card-img-top product-image" alt="Forest Pouring Jug">
+                        </a>
+                        <div class="card-body">
+                            <p class="product-collection mb-1">Forest</p>
+<h5 class="card-title d-flex justify-content-between align-items-start mb-0"><span class="product-name">Small Pouring Jug</span><span class="product-price-shop ms-2">€15</span></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 product-card" data-name="Forest Eucalyptus Tumbler"
+                     data-price="20"
+                     data-collection="Forest"
+                     data-material="Stoneware speckled clay"
+                     data-stock="in-stock"
+                     data-keywords="cup mug tumbler coffee tea drink kitchen ceramic handmade forest green gift">
+                    <div class="card h-100 shadow-sm">
+                        <a href="/{{lang}}/products/ForestSeries/EucalyptusTumbler/ForestSeriesEucalyptusTumbler.html">
+                            <img src="/images/Products/ForestSeries/EucalyptusTumbler/ForestEucalyptusTumbler1.jpeg"
+                                 class="card-img-top product-image" alt="Forest Eucalyptus Tumbler">
+                        </a>
+                        <div class="card-body">
+                            <p class="product-collection mb-1">Forest</p>
+<h5 class="card-title d-flex justify-content-between align-items-start mb-0"><span class="product-name">Eucalyptus Tumbler</span><span class="product-price-shop ms-2">€20</span></h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+
+<!-- Footer -->
+<footer class="text-muted border-top">
+    <div class="bg-light border-bottom py-2">
+        <div class="container d-flex flex-column align-items-center text-center">
+            <!-- Icons -->
+            <div class="override-bootstrap d-flex justify-content-center">
+                <span class="text-muted small me-3">
+                    <i class="bi bi-geo-alt-fill me-2"></i> Solevento ceramics, Penela, Portugal
+                </span>
+                <a href="mailto:solevento.ceramics@gmail.com" class="text-muted me-3">
+                    <i class="bi bi-envelope"></i>
+                </a>
+                <a href="https://www.instagram.com/solevento.ceramics" target="_blank" class="text-muted">
+                    <i class="bi bi-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="/scripts/bootstrap-5.3.7-dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    const search = document.getElementById("searchProducts");
+    const collection = document.getElementById("collectionFilter");
+    const sort = document.getElementById("sortProducts");
+
+    const productContainer = document.querySelector("#productContainer");
+
+    function updateProducts() {
+        const searchTerm = search.value.toLowerCase().trim();
+        const selectedCollection = collection.value;
+
+        const cards = Array.from(
+            document.querySelectorAll(".product-card")
+        );
+
+        cards.forEach(card => {
+            const keywords = card.dataset.keywords.toLowerCase();
+            const name = card.dataset.name.toLowerCase();
+            const cardCollection = card.dataset.collection;
+
+            const matchesSearch =
+                searchTerm === "" ||
+                keywords.includes(searchTerm) ||
+                name.includes(searchTerm);
+
+            const matchesCollection =
+                selectedCollection === "" ||
+                cardCollection === selectedCollection;
+
+            card.style.display =
+                matchesSearch && matchesCollection
+                    ? ""
+                    : "none";
+        });
+
+        // Sorting
+        cards.sort((a, b) => {
+            switch (sort.value) {
+                case "name":
+                    return a.dataset.name.localeCompare(b.dataset.name);
+                case "priceAsc":
+                    return Number(a.dataset.price) - Number(b.dataset.price);
+                case "priceDesc":
+                    return Number(b.dataset.price) - Number(a.dataset.price);
+                default:
+                    return 0;
+            }
+        });
+
+        // Put cards back in sorted order
+        cards.forEach(card => {
+            productContainer.appendChild(card);
+        });
+    }
+
+    // Save filters on this history entry so Back restores the same shop view.
+    const filterStorageKey = "solevento-shop-filters:" + window.location.pathname;
+    function restoreFilters() {
+        const params = new URLSearchParams(window.location.search);
+        let state = Object.fromEntries(params);
+        if (!params.has("collection") && !params.has("search") && !params.has("sort")) {
+            try { state = JSON.parse(sessionStorage.getItem(filterStorageKey)) || {}; } catch (_) {}
+        }
+        search.value = state.search || "";
+        collection.value = Array.from(collection.options).some(option => option.value === state.collection)
+            ? state.collection : "";
+        sort.value = Array.from(sort.options).some(option => option.value === state.sort)
+            ? state.sort : "featured";
+        updateProducts();
+    }
+    function saveFilters() {
+        updateProducts();
+        const state = { search: search.value, collection: collection.value, sort: sort.value };
+        const url = new URL(window.location.href);
+        // Include empty values so an explicitly cleared filter takes precedence over saved state.
+        Object.entries(state).forEach(([key, value]) => url.searchParams.set(key, value));
+        try { window.history.replaceState(window.history.state, "", url.href); } catch (_) {}
+        try { sessionStorage.setItem(filterStorageKey, JSON.stringify(state)); } catch (_) {}
+    }
+    restoreFilters();
+    window.addEventListener("pageshow", restoreFilters);
+    window.addEventListener("popstate", restoreFilters);
+    search.addEventListener("input", saveFilters);
+    collection.addEventListener("change", saveFilters);
+    sort.addEventListener("change", saveFilters);
+</script>
+
+</body>
+</html>

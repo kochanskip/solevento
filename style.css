@@ -1,5 +1,71 @@
 /* Custom styles to work with Bootstrap */
 
+/* The existing Forest Series teaser links to its concept page. */
+.concept-teaser-link,
+.concept-teaser-link:visited,
+.concept-teaser-link:hover {
+    color: inherit;
+    text-decoration: none;
+}
+
+.concept-teaser-link:focus-visible {
+    outline: 2px solid #fae598;
+    outline-offset: 4px;
+}
+
+/* Keep the language dropdown visible beside the logo at every screen size. */
+.language-switcher {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-left: auto;
+    color: #fae598;
+    order: 3;
+    white-space: nowrap;
+}
+
+.language-dropdown-toggle {
+    padding: 0.4rem 0.6rem;
+    background: transparent;
+    border: 1px solid #fae598;
+    border-radius: 0.25rem;
+    color: #fae598;
+    font-family: inherit;
+    font-size: 0.875rem;
+}
+
+.language-dropdown-toggle:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+}
+
+.language-switcher .dropdown-menu {
+    min-width: 10rem;
+    padding: 0.4rem;
+    border-radius: 0.4rem;
+    box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.language-switcher .dropdown-item {
+    color: #322c29;
+    padding: 0.55rem 0.8rem;
+    border-radius: 0.25rem;
+}
+.language-switcher .dropdown-item.active { background: #005a85; color: white; }
+
+@media (min-width: 768px) {
+    .language-nav-item {
+        display: flex;
+        align-items: center;
+        margin-left: 1rem;
+    }
+    .language-nav-item .language-switcher { margin-left: 0; }
+}
+
+@media (max-width: 400px) {
+    .language-switcher { gap: 0.2rem; }
+}
+
 /* General and font styling is now handled by Bootstrap */
 html, body {
     height: 100%;
@@ -469,7 +535,6 @@ h3 {
 
 .forest-series-heading-container {
     position: relative;
-    transform: rotate(2deg);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -485,8 +550,6 @@ h3 {
     max-height: 91px;
     top: -32em;
     left: 4em;
-
-    transform: rotate(2deg);
     position: absolute;
 }
 
@@ -576,4 +639,50 @@ h3 {
         top: -27em;
         left: unset;
     }
+}
+
+/* Keep shop photos consistent despite different source proportions. */
+#productContainer .product-image {
+    aspect-ratio: 4 / 3;
+    height: auto;
+    max-height: none;
+    object-fit: cover;
+}
+/* Collection labels sit above shop item titles in their original casing. */
+#productContainer .product-collection,
+.product-title .product-collection-link {
+    color: #6c757d;
+    font-size: 0.8rem;
+    font-weight: 400;
+    line-height: 1.4;
+    text-transform: none;
+}
+.product-title .product-collection-link {
+    color: #fff;
+    font-size: 1rem;
+    display: block;
+    width: fit-content;
+    margin-bottom: 0.75rem;
+    text-decoration: underline;
+}
+
+.product-title .product-collection-link:hover,
+.product-title .product-collection-link:focus-visible {
+    text-decoration: underline;
+}
+
+.product-title .product-item-name {
+    display: block;
+}
+html[lang="pt-PT"] .product-card[data-stock="out-of-stock"] .card::after {
+    content: "ESGOTADO - ENCOMENDAS SOB PEDIDO";
+}
+
+.video-thumb-button {
+    min-width: 110px;
+    padding: 0.5rem;
+    background: #fff7e5;
+    color: #333;
+    font: inherit;
+    font-size: 0.85rem;
 }

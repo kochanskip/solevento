@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://solevento.com/sitemap.xml
+Sitemap: https://soleventoceramics.com/sitemap.xml
