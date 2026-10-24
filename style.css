@@ -686,3 +686,12 @@ html[lang="pt-PT"] .product-card[data-stock="out-of-stock"] .card::after {
     font: inherit;
     font-size: 0.85rem;
 }
+
+/* Keep gallery arrows away from native video controls. */
+.product-detail-section .carousel-control-prev,
+.product-detail-section .carousel-control-next {
+    top: 50%;
+    bottom: auto;
+    height: 64px;
+    transform: translateY(-50%);
+}

@@ -179,29 +179,6 @@
 <script src="/scripts/bootstrap-5.3.7-dist/js/bootstrap.bundle.min.js"></script>
 <script>
     const carousel = document.querySelector('#productCarousel');
-    const productVideo = carousel.querySelector('video');
-    let playSelectedVideo = false;
-    document.querySelector('.video-thumb-button').addEventListener('click', () => {
-        playSelectedVideo = true;
-        // Starting on the user gesture also allows playback before the slide transition ends.
-        productVideo.play().catch(() => { playSelectedVideo = false; });
-    });
-    carousel.addEventListener('slid.bs.carousel', () => {
-        if (!productVideo.closest('.carousel-item').classList.contains('active')) {
-            productVideo.pause();
-            playSelectedVideo = false;
-        } else if (playSelectedVideo) {
-            productVideo.play().catch(() => {});
-        }
-    });
-    productVideo.addEventListener('click', (event) => {
-        // Leave the native control bar to the browser.
-        const bounds = productVideo.getBoundingClientRect();
-        if (event.clientY < bounds.bottom - 50) {
-            if (productVideo.paused) productVideo.play().catch(() => {});
-            else productVideo.pause();
-        }
-    });
     const thumbs = document.querySelectorAll('.product-thumb');
 
     carousel.addEventListener('slide.bs.carousel', function (event) {
@@ -229,5 +206,6 @@
 <!-- Bootstrap JS -->
 
 
+<script src="/scripts/product-video.js"></script>
 </body>
 </html>

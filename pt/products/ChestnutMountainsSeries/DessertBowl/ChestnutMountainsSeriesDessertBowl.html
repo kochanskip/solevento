@@ -254,11 +254,6 @@
 
 <script>
     const carousel = document.querySelector('#productCarousel');
-    const video = carousel.querySelector('video');
-    document.querySelector('.video-thumb-button').addEventListener('click', () => video.play().catch(() => {}));
-    carousel.addEventListener('slid.bs.carousel', () => {
-        if (!video.closest('.carousel-item').classList.contains('active')) video.pause();
-    });
     const thumbs = document.querySelectorAll('.product-thumb');
 
     carousel.addEventListener('slide.bs.carousel', function (event) {
@@ -284,5 +279,8 @@
 </script>
 
 <!-- Bootstrap JS -->
+
+<script src="../../../../scripts/product-video.js"></script>
+
 </body>
 </html>
