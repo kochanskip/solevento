@@ -110,6 +110,17 @@ function decorate(html,lang,route,workshopId) {
 // Keep all product sources while controlling which collections appear in the shop.
 const shopCollections = new Set(readJSON('content/pages/shop-collections.json'));
 const hiddenShopProducts = readJSON('content/pages/hidden-shop-products.json');
+function shopImages(html) {
+ return html.replace(/<img\b[^>]*>/g,tag=>{
+  if(!/class="[^"]*\bproduct-image\b/.test(tag)) return tag;
+  const src=tag.match(/\bsrc="([^"]+)"/)?.[1];
+  if(!src?.startsWith('/images/Products/')) return tag;
+  const base='/images/shop/'+src.slice('/images/Products/'.length);
+  if(![480,960].every(width=>fs.existsSync(path.join(root,`${base.slice(1)}.${width}.webp`)))) return tag;
+  tag=tag.replace(/\s+(?:loading|decoding|width|height|srcset|sizes)="[^"]*"/g,'');
+  return tag.replace(/\bsrc="[^"]+"/,`src="${base}.480.webp" srcset="${base}.480.webp 480w, ${base}.960.webp 960w" sizes="(min-width: 1400px) 416px, (min-width: 1200px) 356px, (min-width: 992px) 296px, (min-width: 768px) 216px, (min-width: 576px) 516px, calc(100vw - 24px)" width="480" height="360" loading="lazy" decoding="async"`);
+ });
+}
 function availableShop(html) {
  const cards=[...html.matchAll(/<div\b[^>]*class="col-md-4 product-card"[^>]*>/g)];
  for(const card of cards.reverse()) {
@@ -136,7 +147,7 @@ for(const lang of languages) {
   let html=read(`content/pages/${lang}/${route}`);
   html=html.replace('{{privateCards}}',shared.filter(w=>w.category==='private').map(w=>card(lang,w)).join('\n')).replace('{{groupCards}}',shared.filter(w=>w.category==='group').map(w=>card(lang,w)).join('\n'));
   html=html.replace('{{workshopCarousel}}',shared.map((w,i)=>`<div class="carousel-item${i===0?' active':''}"><div class="row g-4 justify-content-center">${card(lang,w,'col-12 col-md-6 col-lg-4 workshop-carousel-card')}</div></div>`).join('\n'));
-  write(`${lang}/${route}`,decorate(route === 'shop.html' ? availableShop(html) : html,lang,route));
+  write(`${lang}/${route}`,decorate(route === 'shop.html' ? shopImages(availableShop(html)) : html,lang,route));
   generated.push(url(lang,route));
  }
  for(const w of shared) {

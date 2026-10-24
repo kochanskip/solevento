@@ -63,6 +63,17 @@ Only the root homepage uses an HTML/JavaScript redirect to the English homepage.
 Old workshop query URLs and other legacy pages are no longer generated.
 `robots.txt` and the generated sitemap use `https://soleventoceramics.com`.
 
+### Shop photo sizes
+
+Original product photos stay unchanged. Shop cards use generated 480px and 960px
+WebP copies in `images/shop/`, with responsive sizing and lazy loading. Product
+galleries continue using the originals. Keep the generated copies when publishing.
+
+After adding or replacing shop photos, run `node scripts/build-shop-images.mjs`
+with the `sharp` Node package available (installed locally or through `NODE_PATH`),
+then run `node scripts/build-site.mjs`. The normal build uses the original photo
+as a fallback when optimized copies have not been generated yet.
+
 ## License
 Copyright (c) 2026 Piotr Kochanski.
 
