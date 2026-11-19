@@ -1,0 +1,10 @@
+{
+  "blockedAgents": [
+    "GPTBot",
+    "OAI-SearchBot",
+    "ClaudeBot",
+    "Claude-SearchBot",
+    "Claude-User",
+    "Google-Extended"
+  ]
+}

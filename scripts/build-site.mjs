@@ -3,6 +3,7 @@ import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {workshopImage} from './workshop-image.mjs';
 import {formatHTML} from './format-html.mjs';
+import {crawlerMeta} from './crawler-meta.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const read = file => fs.readFileSync(path.join(root,file),'utf8');
@@ -14,6 +15,7 @@ function portableURL(value,file) {
 }
 const write = (file,text) => {
  if(file.endsWith('.html')) {
+  text=crawlerMeta(text);
   // Relative paths and explicit index files also work when opened with file://.
   text=text.replace(/\b(href|src|poster)="(\/[^\"]*)"/g,(_,attr,value)=>`${attr}="${portableURL(value,file)}"`);
   text=text.replace(/\bsrcset="([^\"]*)"/g,(_,value)=>'srcset="'+value.replace(/\/[^\s,]+/g,url=>portableURL(url,file))+'"');
@@ -184,5 +186,8 @@ for(const lang of languages) {
 write('index.html',`<!DOCTYPE html>
 <html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Solevento Ceramics</title><meta name="robots" content="noindex,follow"><meta http-equiv="refresh" content="0;url=/en/index.html"><link rel="canonical" href="https://soleventoceramics.com/en/"></head><body><script>location.replace("/en/index.html"+location.search+location.hash);</script><p><a href="/en/index.html">Continue to Solevento Ceramics</a></p></body></html>`);
 write('sitemap.xml',`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${generated.map(u=>`  <url><loc>${origin+escape(u)}</loc></url>`).join('\n')}\n</urlset>\n`);
-write('robots.txt',`User-agent: *\nAllow: /\n\nSitemap: ${origin}/sitemap.xml\n`);
+// These are crawler opt-out requests, not server-side access restrictions.
+const crawlerPolicy=readJSON('content/crawler-policy.json');
+const blockedCrawlerRules=crawlerPolicy.blockedAgents.map(agent=>`User-agent: ${agent}\nDisallow: /`).join('\n\n');
+write('robots.txt',`# AI crawler opt-outs; ordinary search crawling remains allowed.\n${blockedCrawlerRules}\n\nUser-agent: *\nAllow: /\n\nSitemap: ${origin}/sitemap.xml\n`);
 console.log(`Built ${generated.length} localized pages, homepage redirect and sitemap.`);
