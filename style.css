@@ -246,10 +246,6 @@ main {
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-.product-card[data-stock="out-of-stock"] .product-image {
-    filter: grayscale(25%) brightness(0.7);
-}
-
 .product-card[data-stock="out-of-stock"] .card::after {
     content: "OUT OF STOCK - REQUEST TO ORDER";
     position: absolute;

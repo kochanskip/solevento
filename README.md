@@ -1,86 +1,94 @@
 # Solevento
 
-## English and Portuguese website
+## Editing the website
 
-The published pages live in `en/` and `pt/` (European Portuguese). Shared images,
-fonts, videos, CSS and Bootstrap stay at the root. Each page has an EN / PT
-dropdown linking to the equivalent page, plus canonical and language metadata.
-Generated HTML uses indented lines and Windows CRLF line endings for readability.
-The root homepage defaults to English. Old URL compatibility pages have been removed.
+`en/` and `pt/` are the actual editable website pages. Edit these HTML files
+in WebStorm and refresh your browser. Edit shared styles in `style.css`.
+There is no separate copy of the pages and no HTML generation step.
+The root `index.html` opens the English homepage.
 
-### Editing content
+### Preview and checks
 
-- Edit ordinary page templates in `content/pages/en/` and `content/pages/pt/`.
-  Both languages use the same filenames. `{{lang}}` in links is filled by the build.
-- Edit workshop prices, images, categories, duration, number of sessions and
-  availability in `content/events/workshops.json`. Prices are numeric EUR amounts,
-  durations are minutes, and availability dates use `YYYY-MM-DD`.
-- Edit workshop copy in `content/events/workshops.en.json` and
-  `content/events/workshops.pt.json`, keyed by the same stable workshop IDs.
-  Each language has its own title, summary, description, requirements, optional
-  description list and URL slug. Keep slugs stable once published.
-  To use a different image for a language, add an optional `image` field to that
-  workshop's record in the corresponding translation file, for example
-  `"image": "/content/events/images/KidsCeramicClass.pt.webp"`. Use a path from
-  the site root starting with `/`, and put the actual image at that location.
-  If omitted, the shared image is used. The override applies to the workshop
-  detail page, workshop listing and homepage carousel after rebuilding.
-- Workshop detail layouts live in `content/pages/en/workshop.html` and its
-  Portuguese counterpart. Their content is rendered by `scripts/build-site.mjs`.
-- Shared styling is in `style.css`. The homepage carousel script regroups existing
-  HTML cards at mobile, tablet and desktop breakpoints without fetching content.
+Run `node scripts/preview.mjs` and open http://localhost:8080/en/ or
+http://localhost:8080/pt/. Changes appear after refreshing the browser.
+You can also open the HTML files directly using file://.
 
-After editing, run from the project root (Node.js 22 or later, no dependencies):
+Run `node scripts/check-site.mjs` after edits. It checks local links, images,
+video paths, srcsets, inline JavaScript, page languages and language-switch links.
+
+`node scripts/build-site.mjs` now ONLY updates `sitemap.xml` and `robots.txt`
+from the existing pages and `content/crawler-policy.json`. It never writes HTML.
+Run it when adding, removing or renaming a page, then publish the changed files.
+It does not restore deleted pages, add shop cards or change shop visibility.
+
+### Products and shop visibility
+
+Copy a similar page into both `en/products/` and `pt/products/`, then update
+its title, copy, specifications, price, media and email enquiry. Set its canonical
+and alternate language URLs, and link the English and Portuguese language menus
+to each other. Keep matching filenames across languages.
+
+Add a product card manually in each language's `shop.html` when ready to show it.
+Cards appear in the manually arranged HTML order for Featured. Collection labels
+are small text above item names; match `data-collection` to the filter option value.
+Update both the visible price and numeric `data-price`. The product collection
+link points to `shop.html?collection=...` with the filter value URL-encoded.
+
+To hide an item, remove its card from both shops, leaving its product pages and
+images in place. To restore it, copy another card and point it to the product.
+Collection dropdowns are maintained manually, in alphabetical display order.
+There are no separate hidden-product or collection configuration files.
+Hidden-from-shop pages remain accessible by direct URL and may be indexed.
+
+Mark a shop card sold out using `data-stock="out-of-stock"` and add a stock
+notice to the product page in each language. Restore both when available again.
+
+### Images and videos
+
+Keep original photos in `images/Products/<collection>/<product>/`.
+Product display copies live in that product's `1200/` and `160/` folders.
+Shop copies currently live in `images/shop/` at 480px and 960px.
+Original photos are never overwritten by the optimization scripts.
+
+After adding or replacing image references in the HTML, run:
 
 ```sh
-node scripts/build-site.mjs
+node scripts/build-shop-images.mjs
+node scripts/build-product-images.mjs
 node scripts/check-site.mjs
 ```
 
-The build updates both language folders, workshop listing/detail pages, homepage
-workshop cards, the root homepage redirect, and `sitemap.xml`. It validates workshop content
-and fails if translations are missing. **Edit source templates rather than the
-generated files in `en/` or `pt/`**, then rebuild before publishing. Generated HTML
-is included in the repository, so hosting still serves this as an ordinary static
-website with no server-side runtime or build service required.
+The image commands require the `sharp` Node package, installed locally or made
+available through `NODE_PATH`. They read the actual English and Portuguese shop
+pages, generate copies, and update image references directly. Product gallery
+optimization only applies to products linked from those shops. No manifest or
+`content/pages` folder is required. Existing optimized references can be processed
+again; they are mapped back to the original photos. If an original is missing,
+restore it or remove the corresponding gallery entry before running optimization.
 
-To add an ordinary page, add its template in both language folders and its relative
-path to `content/pages/routes.json`, then rebuild. To add a workshop, add its shared
-record and matching translation records with unique IDs and slugs, then rebuild.
+When deleting a photo, remove its slide and thumbnail in both languages and
+renumber `data-bs-slide-to` values from zero. Delete unused generated copies if
+needed. Videos use `scripts/product-video.js` and labelled play buttons; keep each
+button's slide index aligned with its video slide.
 
-### Local preview
+### Workshops
 
-```sh
-node scripts/preview.mjs
-```
+Edit workshop detail pages directly in `en/workshops/` and `pt/workshops/`.
+If changing a title, price, image or date, also update that workshop's cards in
+both `workshops.html` pages and both homepages. These copies are now manual.
+The JSON files in `content/events/` are retained as reference data only; changing
+them does not update the HTML. Images in `content/events/images/` remain in use.
 
-Open `http://localhost:8080/en/` or `http://localhost:8080/pt/`. Stop the preview
-with Ctrl+C. You can also open the root `index.html` directly in your browser:
-generated links and assets use relative paths, including explicit `index.html`
-filenames for workshop folders, so they work under `file://` as well as HTTP.
+### Crawler preferences and publishing
 
-Only the root homepage uses an HTML/JavaScript redirect to the English homepage.
-Old workshop query URLs and other legacy pages are no longer generated.
-`robots.txt` and the generated sitemap use `https://soleventoceramics.com`.
+`content/crawler-policy.json` controls AI crawler opt-out rules in `robots.txt`.
+These rules are voluntary crawler requests, not enforced server access controls.
+Public pages remain indexable by ordinary search engines. The homepage redirect
+has its own noindex instruction. No unsupported noai meta tags are generated.
 
-### Shop photo sizes
-
-Original product photos stay unchanged. Shop cards use generated 480px and 960px
-WebP copies in `images/shop/`, with responsive sizing and lazy loading. Product
-galleries continue using the originals. Keep the generated copies when publishing.
-
-After adding or replacing shop photos, run `node scripts/build-shop-images.mjs`
-with the `sharp` Node package available (installed locally or through `NODE_PATH`),
-then run `node scripts/build-site.mjs`. The normal build uses the original photo
-as a fallback when optimized copies have not been generated yet.
-
-### Product gallery photo sizes
-
-Visible shop products use 1200px WebP gallery copies and 160px thumbnails from
-`images/product-display/`. Originals are preserved and hidden products are left
-unchanged. After adding or replacing photos, build the site, run
-`node scripts/build-product-images.mjs` with Sharp available, then rebuild the site.
-The generated mapping is stored in `content/pages/product-images.json`.
+Publish the edited HTML, CSS, scripts, media, sitemap and robots.txt to update the
+public website. Local changes do not publish automatically. The site is static;
+visitors do not need Node.js or an image-processing runtime.
 
 ## License
 Copyright (c) 2026 Piotr Kochanski.
