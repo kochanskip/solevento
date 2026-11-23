@@ -8,7 +8,7 @@ const absolute=url=>path.join(root,url.slice(1));
 const relative=(file,url)=>path.relative(path.dirname(file),absolute(url)).split(path.sep).join('/');
 function original(url){
  if(url.startsWith('/images/shop/'))url='/images/Products/'+url.slice('/images/shop/'.length).replace(/\.(480|960)\.webp$/,'');
- else url=url.replace(/\/(160|1200)\/([^/]+)\.webp$/,'/$2');
+ else url=url.replace(/\/(160|480|960|1200)\/([^/]+)\.webp$/,'/$2');
  if(!fs.existsSync(absolute(url))){
   const fallback=url.replace(/\/110\//,'/');
   if(fs.existsSync(absolute(fallback)))url=fallback;
@@ -19,7 +19,7 @@ function original(url){
 export async function optimizeImages(mode){
  const sharp=createRequire(import.meta.url)('sharp'),jobs=new Map(),pages=new Map();
  const urlFor=(value,file)=>decodeURIComponent(new URL(value,'https://soleventoceramics.com/'+path.relative(root,file).split(path.sep).join('/')).pathname);
- const target=(src,width)=>mode==='shop'?'/images/shop/'+src.slice('/images/Products/'.length)+`.${width}.webp`:path.posix.dirname(src).replace(/\/110$/,'')+`/${width}/`+path.posix.basename(src)+'.webp';
+ const target=(src,width)=>path.posix.dirname(src).replace(/\/110$/,'')+`/${width}/`+path.posix.basename(src)+'.webp';
  const add=(value,file,width)=>{const src=original(urlFor(value,file)),dest=target(src,width);jobs.set(dest,{src,width});return relative(file,dest);};
  for(const lang of ['en','pt']){
   const shopFile=path.join(root,lang,'shop.html'),shop=fs.readFileSync(shopFile,'utf8');

@@ -47,7 +47,7 @@ notice to the product page in each language. Restore both when available again.
 
 Keep original photos in `images/Products/<collection>/<product>/`.
 Product display copies live in that product's `1200/` and `160/` folders.
-Shop copies currently live in `images/shop/` at 480px and 960px.
+Shop copies live in the same product folder's `480/` and `960/` subfolders.
 Original photos are never overwritten by the optimization scripts.
 
 After adding or replacing image references in the HTML, run:
