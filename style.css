@@ -645,7 +645,7 @@ h3 {
     object-fit: cover;
 }
 /* Collection labels sit above shop item titles in their original casing. */
-#productContainer .product-collection,
+.product-card .product-collection,
 .product-title .product-collection-link {
     color: #6c757d;
     font-size: 0.8rem;
