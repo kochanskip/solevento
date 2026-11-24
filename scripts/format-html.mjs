@@ -1,4 +1,4 @@
-// Keep generated HTML readable without altering JavaScript or preformatted text.
+// Keep editable HTML readable without altering JavaScript or preformatted text.
 export function formatHTML(html) {
     const rawBlocks = [];
     html = html.replace(/<(script|style|pre|textarea)\b[^>]*>[\s\S]*?<\/\1>/gi, block => {
@@ -20,6 +20,6 @@ export function formatHTML(html) {
         }
         return '    '.repeat(indent) + trimmed;
     });
-    return lines.join('\n').replace(/__RAW_BLOCK_(\d+)__/g, (_, index) => rawBlocks[Number(index)])
-        .replace(/\n{3,}/g, '\n\n').trim() + '\n';
+    return lines.join('\n').replace(/\n{3,}/g, '\n\n').trim()
+        .replace(/__RAW_BLOCK_(\d+)__/g, (_, index) => rawBlocks[Number(index)]) + '\n';
 }

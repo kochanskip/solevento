@@ -16,6 +16,10 @@ You can also open the HTML files directly using file://.
 Run `node scripts/check-site.mjs` after edits. It checks local links, images,
 video paths, srcsets, inline JavaScript, page languages and language-switch links.
 
+Run `node scripts/format-site.mjs` to indent the HTML and put adjacent elements
+on separate lines. It preserves scripts, styles and preformatted blocks, and checks
+that the page wording and markup have not changed.
+
 `node scripts/build-site.mjs` now ONLY updates `sitemap.xml` and `robots.txt`
 from the existing pages and `content/crawler-policy.json`. It never writes HTML.
 Run it when adding, removing or renaming a page, then publish the changed files.
